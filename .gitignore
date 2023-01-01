@@ -1,0 +1,9 @@
+notes
+node-modules
+dist
+coverage
+.env
+statements
+.idea/
+.vscode/
+coverage.info

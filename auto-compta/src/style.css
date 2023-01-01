@@ -1,0 +1,225 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* variables CSS pour harmonisation */
+:root{
+  --color-black: black;
+  --color-dark: DarkSlateGrey;
+  --color-medium: DarkGrey;
+  --color-vivid: Aquamarine;
+  --color-light: AliceBlue;
+  --color-aside: CadetBlue;
+  --color-background: DarkSeaGreen;
+
+  --text-dark: rgb(5, 9, 37);
+  --text-light: FloralWhite;
+  --text-shadow: 1px 1px 2px var(--color-black);
+
+  --marge-principale:50px 0px 25px 0px;
+  --padding-de-base:1rem;
+  --border: solid 2px var(--color-black)
+}
+
+
+/* style header */
+
+header {
+  padding: 20px;
+  text-align: center;
+  justify-content: space-around;
+  min-width: 100%;
+  color: var(--color-vivid);
+  text-shadow: var(--text-shadow);
+  background-color: var(--color-medium);
+  border: solid 3px var(--color-vivid);
+  /* position: fixed; z-index: 2; */
+}
+
+#mois {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 2.5rem;
+}
+
+#menu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background-color: var(--color-vivid);
+  border: var(--border);
+  font-family: Georgia, 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+  text-align: center;
+  text-shadow: none;
+  font-style: bold;
+
+}
+
+nav {
+  font-size:1.5rem;
+  font-family:sans-serif;
+  display: flex;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline;
+  list-style: none;
+  margin: 4rem;
+  padding: 0;
+  z-index: 300;
+
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav li ul {
+  margin:0;
+  padding:1rem;
+  background: rgb(33, 139, 125);
+  display:none;
+  position:absolute;
+  z-index: 300;
+  right: 30%; /* à corriger */
+}
+nav li:hover ul {
+  /* background-color: blueviolet; */
+  display:block;
+}
+
+nav li ul li:hover {
+  background-color:var(--color-vivid);
+  margin: 2px;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--color-vivid);
+  text-shadow: var(--text-shadow);
+}
+
+/* style body */
+body {
+  background-color: var(--color-black);
+  margin: auto;
+  padding: var(--padding-de-base);
+}
+
+section {
+  margin: 1rem;
+  padding: var(--padding-de-base);
+  background-color: var(--color-light);
+  padding: 2rem;
+  border: var(--border);
+  min-height: 300px;
+}
+  
+h1, h2, h3, h4, h5, h6 {
+    align-items: baseline;
+}
+ 
+h2 {
+  color: var(--text-dark);
+  text-align: left;
+  font-size: 2.5rem;
+  margin: 2.5rem;
+}
+
+h3 {
+  text-align: left;
+  font-size: 2rem;
+  margin: 2rem;
+}
+
+p {
+  text-align: left;
+  margin-left: 10%;
+}
+
+/* éviter les problèmes de marges auto des col */
+.no-gutter > [class*='col-'] {
+  padding-right:0;
+  padding-left:0;
+}
+
+.limited-height {
+  height: 50px;
+}
+
+.graphique {
+/*   position: relative;
+  top: 0;
+  right: 0;
+  z-index: 200; */
+  padding: 15px;
+/*   float: right; */
+  font-style: italic;
+  border: var(--border);
+  background-color: var(--color-vivid) ;
+  align-items: center;
+  min-height: 250px;
+}
+
+.grid-container {
+  margin: 0;
+  padding: 15px;
+  background-color: var(--color-medium);
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+/*   grid-gap: 20px; */
+}
+
+.grid-header {
+  grid-column: 1 / span 3;
+  grid-row: 1/2;
+}
+
+.grid-main {
+  grid-column: 1/3;
+  grid-row: 2/2;
+}
+
+.grid-right {
+  grid-column: 3/3;
+  grid-row: 2/2;
+}
+
+
+table {
+  background-color: var(--color-light);
+  margin: 2rem;
+  padding: 2px;
+}
+
+table,
+td {
+    border: 1px solid #333;
+}
+
+td {
+  min-width: 3px;
+  margin: auto;
+  padding: 2px;
+}
+
+tr {
+  min-height: 3px;
+}
+
+thead,
+tfoot {
+    background-color: #333;
+    color: #fff;
+}
+
+.tableau-par-categorie {
+  width: 80%;
+  margin-right: 10px; 
+}

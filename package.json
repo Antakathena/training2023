@@ -1,0 +1,21 @@
+{
+  "name": "sophie-training",
+  "version": "1.0.0",
+  "private": true,
+  "description": "sophie-training",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Antakathena",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "mkdirp": "^1.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Antakathena/training2023.git"
+  }
+}
