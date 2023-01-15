@@ -1,5 +1,5 @@
 notes
-node-modules
+node_modules
 dist
 coverage
 .env

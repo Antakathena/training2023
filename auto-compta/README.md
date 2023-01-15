@@ -1,4 +1,4 @@
-# P1 est un projet d'automatisation de comptabilité domestique.  
+# Auto-compta est un projet d'automatisation de comptabilité domestique.  
 A partir des csv des transactions du mois pour chaque compte courant du foyer transmis par la banque,  
 il doit afficher le relevé de compte, le relevé par catégorie et le résultat;  
 
