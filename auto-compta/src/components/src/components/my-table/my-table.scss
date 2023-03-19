@@ -1,0 +1,44 @@
+article {
+  display: block;
+  font-size: 1rem;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  width: 600px;
+  margin-left: 20px;
+  z-index: 500;
+}
+
+#titre-tableau{
+  font-size: 2rem;
+  background-color: lightslategrey;
+}
+table {
+  margin: 30px;
+  table-layout: fixed;
+  width: 100%;
+  background-color: rgba(119,136,153,.7);
+  border-collapse: collapse;
+}
+
+/* thead th:nth-child(1) {
+  width: 30%;
+  border: 1px solid;
+}
+
+thead th:nth-child(2) {
+  width: 20%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 35%;
+} */
+
+th, td {
+  padding: 20px;
+  border: 1px solid;
+}
+
+

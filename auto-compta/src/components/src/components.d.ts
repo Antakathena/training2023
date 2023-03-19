@@ -7,18 +7,18 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MyComponent {
-        /**
-          * The first name
-         */
+        "age": number;
         "first": string;
-        /**
-          * The last name
-         */
         "last": string;
-        /**
-          * The middle name
-         */
         "middle": string;
+        "name": string;
+    }
+    interface MyModal {
+        "myTitle": string;
+    }
+    interface MyTable {
+        "myTitle": string;
+        "myheaders": string[];
     }
 }
 declare global {
@@ -28,27 +28,43 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLMyModalElement extends Components.MyModal, HTMLStencilElement {
+    }
+    var HTMLMyModalElement: {
+        prototype: HTMLMyModalElement;
+        new (): HTMLMyModalElement;
+    };
+    interface HTMLMyTableElement extends Components.MyTable, HTMLStencilElement {
+    }
+    var HTMLMyTableElement: {
+        prototype: HTMLMyTableElement;
+        new (): HTMLMyTableElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "my-modal": HTMLMyModalElement;
+        "my-table": HTMLMyTableElement;
     }
 }
 declare namespace LocalJSX {
     interface MyComponent {
-        /**
-          * The first name
-         */
+        "age"?: number;
         "first"?: string;
-        /**
-          * The last name
-         */
         "last"?: string;
-        /**
-          * The middle name
-         */
         "middle"?: string;
+        "name"?: string;
+    }
+    interface MyModal {
+        "myTitle"?: string;
+    }
+    interface MyTable {
+        "myTitle"?: string;
+        "myheaders"?: string[];
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "my-modal": MyModal;
+        "my-table": MyTable;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +72,8 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "my-modal": LocalJSX.MyModal & JSXBase.HTMLAttributes<HTMLMyModalElement>;
+            "my-table": LocalJSX.MyTable & JSXBase.HTMLAttributes<HTMLMyTableElement>;
         }
     }
 }
