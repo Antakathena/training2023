@@ -848,12 +848,96 @@ Trouver quelqu'un de moins fort à qui expliquer, quelqu'un de mon niveau avec q
 
 ### 17/03/23_Vendredi
 
-[X] corriger PRs AKS (encore, oui. mais merged sauf Alk-tree qui prend plus de temps à builder)
+[X] corriger PRs AKS (encore des indentations à corriger, oui. mais merged sauf Alk-tree qui prend plus de temps à builder)
 [X] CR suivi à Diego
 [ ] Trouver de l'aide pour corriger tests absSort. Discussion avec Amira, qui voulait prendre le ticket 3068 sur AbsSort breaks column visibility.
 Je lui ais montré ce que j'essayais de faire sur AbsSort et elle renonce pour l'instant en attendant que j'ai fini. Elle me dit qu'il faut que je fasse un mock d'applicationApi et de de comparators pour les passer à initAbsSort...
 Sauf qu'en cherchant à le faire, j'ai réalisé que ma modif ne fonctionnait pas car erreur sur appEntry ( type void pas applicable à ApplicationDataEntry )
-
 ça devient très caffouillis. Je vais faire une autre branche, ne laisser que les modifs utiles pour le ticket et le changements de nom de variables et cela une fois validé, je prendrais le ticket 3082 ou 2776 et je re travaillerai sur la suppression du this dans la fonction de utils en tirant parti des capacités de mon IDE et/ou de sortAPI de adaptable.
+[ ] en essayant des trucs avec Stencil sur ma branche training j'ai encore eu le soucis d'autorisation; J'ai essayé d'ajouter un certificat au format PEM pour Github et de pointer dessus dans mon .npmrc mais ça n'a pas marché; j'ai donc désactivé des sécurités temporairement pour faire un npm install stencil > app
+
+
 
 Coups de fils importants à passer : ménage, notaire, rdv cavaleri (carence fer et traitement) et gy., allergo althea, orthoptiste Althéa. Ostéo (épaule gauche)?
+
+Add certificate for github to be able to run stencil without deactivating ssl certifications:
+
+https://stackoverflow.com/questions/36494336/npm-install-error-unable-to-get-local-issuer-certificate
+recup de la clé de certificat de mon github sous forme de .pem
+
+puis edit .npmrc file :
+https://stackoverflow.com/questions/42877722/how-can-i-add-a-npmrc-file
+pro tip, if you already have an .npmrc file, you can type **npm config edit from the command line** to open you npmrc file
+
+; cafile=undefined
+devient :
+cafile= /home/sophie/certificationKeys/github.pem
+
+reporté car mise à jour forcée de office 365 dans 2h avec pop up au milieu de l'écran !!!
+
+### 20/03/23_Lundi
+Toujours fatiguée et le nez qui pique, début cure de fer
+
+Pour info, avant de les perdre : les commandes de la manip pour pouvoir supprimer la variable d'environnement qui m'empêchait d'installer le browser pour les ajouts d'AKS :
+
+git push --set-upstream origin feat/FNX-2282/add-AKS-to-alk-toast
+
+ // le push ne passait pas. npm run test : erreur car pas de browser installé < variable d'env. la changé pour false n'a pas suffit, il fallait la supprimer complètement. Je mets quand même les deux pour référence.
+ // NB : bien utiliser l'autocomplétion, surtout si on fait rm -rf !!! on peut supprimer tout son systeme.
+
+export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=false
+env | grep PU
+rm -rf node_modules/
+npm i
+npm run test
+env | grep PU
+unset PUPPETEER_SKIP_CHROMIUM_DOWNLOAD
+npm run test
+env | grep PU
+reset
+rm -rf node_modules/
+npm i
+npm run test
+
+ça marche. Plus qu'à pusher
+
+Mais bon, pour Alk-tree, ça corrige un problème mais ça n'explique pas pourquoi le push est passé et pourquoi malgré l'absence d'erreur, le build n'est pas bon (les tests prennent 3 plombes et ça dépasse le délais de 2 heures)
+
+ToDo:
+[ ] corriger Alk-tree
+[ ] faire branche propre pour absolute sorting et prendre le ticket suivant d'abs sort (2776 ou 3082)
+[ ] training : cartonner en repassant les tests pluralsight JS et TS
+[ ] mettre auto-compta au carré pour pouvoir eventuellement la montrer à Diego demain.
+
+Done:
+- corriger alk-tree -> pas trouvé la solution, message dans 'dev' et demande à Saurav de faire un point pour comparer alk-tre et alk-grid.utils mais pas dispo
+- faire branche propre ok, npm run test ok, lint ok
+- NB : en voulant créer une branche alternative et renommer l'autre, j'ai décrocher ma branche local du repo distant de pegasus donc il a fallut que je trouve comment les reconnecter (origin, tout ça);
+- training : test pluralsight PI pour Node.js et NPM, et repris le test Typescript
+- end of day call avec Thanh, Amira, Philippe : Thanh m'a reproché d'avoir créé une branche au lieu d'utiliser git pour revenir en arrière. Pendant 20 min. Mon faire une branche pourrevenir sur un env propre mais conserver mes multiples console.log sont devenu avoir 40 000 branches pour garder 1 console.log... je lui ai dit que je suivait des cours sur git en attendant, il m'a dit qu'il ne fallait pas me plaindre si je ne faisait pas ce qu'on me disait parce que je voulais régler trop de problèmes à la fois mais je ne me plaignait pas. J'expliquais pourquoi ma branche n'était plus claire pour les autres et pourquoi je voulais en faire une claire;
+edit : Amira m'a expliqué ce matin que s'il insistait autant c'est parce que j'expliquais pourquoi je ne faisais pas autrement au lieu de dire juste j'ai compris. Mais l'autre jour il avait dit que certains dev préféraient les commits, d'autres les branches... il n'a pas compris. Mais pourquoi est-ce que j'aurai besoin qu'il comprenne. C'est là mon problème. Pourquoi je ne peux pas juste laisser courir sachant que je travaille déjà pour m'améliorer en git et que à cours terme, faire une autre branche me semblait la bonne solution. Je ne devrais pas avoir besoin de son assentiment.
+- swiss ball 45 min avec coach Christian
+
+### 21/03/23_Mardi
+ToDo:
+[ ] corriger Alk-tree -> voir Saurav
+[ ] créer env pour 2870 et publier PR (vérif noms de variables si je les ai pushées ou pas)
+[ ] passer 3082 du back-log à in progress dans jira -> commencer le travail dessus
+[ ] training : potasser fiches JS et repasser le test, continuer cours sur git
+[ ] auto-compta : je veux comprendre comment on accède aux différents fichiers HTML en fonction de la page où on est. cf les html de fnx
+
+At the office. grèves mais j'ai eu un RER tout de suite. Poubelles partout dans Paris à cause de la grève des éboueurs.
+
+Daily
+Grooming tech x 2
+Grooming fonctionnel
+Discussions avec Amira, Diego, Philippe
+Point avec Elodie à 14h dans le salon au RC Red... -> penser à demander à Diego pour le papier que j'aurai du signer pour la fin de ma periode d'essai.
+
+Done :
+- env créé pour 2870 + PR
+- récup de 3082 pour continuer sur AbsSort
+- training : Git (20 min)
+- Alk-tree : trouvé différence de version de jest dans les package.json des components dfont le build ne passent pas. ça marche comme ça. -> alk-tree mergé;
+
+Nb : Amira me conseille de changer le minimum de choses et autre conseil : stocker mes snippets, scripts, etc... dans des blocs notes dans un dossier windows
