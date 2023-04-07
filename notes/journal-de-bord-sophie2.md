@@ -928,11 +928,11 @@ ToDo:
 
 At the office. grèves mais j'ai eu un RER tout de suite. Poubelles partout dans Paris à cause de la grève des éboueurs.
 
-Daily
-Grooming tech x 2
-Grooming fonctionnel
+10h15 Daily
+10h30-11h et 15h-16h Grooming tech x 2
+14h Point avec Elodie à 14h dans le salon au RC Red... -> penser à demander à Diego pour le papier que j'aurai du signer pour la fin de ma periode d'essai.
+16h-16h30 Grooming fonctionnel PDC widget
 Discussions avec Amira, Diego, Philippe
-Point avec Elodie à 14h dans le salon au RC Red... -> penser à demander à Diego pour le papier que j'aurai du signer pour la fin de ma periode d'essai.
 
 Done :
 - env créé pour 2870 + PR
@@ -941,3 +941,391 @@ Done :
 - Alk-tree : trouvé différence de version de jest dans les package.json des components dfont le build ne passent pas. ça marche comme ça. -> alk-tree mergé;
 
 Nb : Amira me conseille de changer le minimum de choses et autre conseil : stocker mes snippets, scripts, etc... dans des blocs notes dans un dossier windows
+
+### 22/03/23_Mercredi
+10h-11h30 PI planning review
+14h-15h PI Wrap-up
+AKS added in alk-user-rights
+correction PR 2870 (retour à FakePegTable au lieu de createFakePegTable car cette fonction est utilisée comme constructeur d'objet)
+Récup de IntelliJ sur la VBox linux 
+
+### 23/03/23_Jeudi
+10h15-11h15 sprint planning
+correction de la version jest modifiée inutilement dans la PR pour Alk-user-rights
+Grooming aprèm annulé
+lecture PRs
+
+
+### 24/03/23_Vendredi
+off
+prépa fête d'anniv Olivier et NIMP Steampunk Robot Western
+
+
+### 27/03/23_Lundi
+OOO day
+
+
+### 28/03/23_Mardi
+Bureau. Tout le monde là sauf Amira et Thanh, en distanciel
+ToDo:
+[X] rapport de suivi à Diego
+[X] read PRs : la moitié à peu près + revue de notions TS et JS 
+[X] plan weekly training to retake JS pluralsight + Javascript Security best pratices (chapitre test your code) et début de Javascript fundamentals niveau intermédiaire (cours de 3h) (préciser les horaires de training)
+[X] e-mails (à moitié)
+
+NB : au bureau, pas bien vive aujourd'hui. Bujo avancé. Incription à  TaskHuman et à IconnectYou
+NB : loose totale avec les type-challenges sur Github, il va falloir s'améliorer
+
+### 29/03/23_Mercredi
+Home office.
+13h-14h : TownHall
+
+ToDo:
+[X] rapport de suivi à Diego
+[X] outlook e-mails (+ check pour inscription kids day et prévenir Elodie que Diego n'a pas vu passer le papier pour la fin de période d'essai)
+[X] vu vidéo du PDG sur le site de finastra. NB : trouver comment comprendre la finance -> lien 'intuition Know-how'(cf e-mail QN du 9/01/2023)
+[X] training : continuer Javascript fundamentals niveau intermédiaire to prepare retake pluralsight test (chapter 2, 3, 4) (à la fin, faire un récap du résumé)
+[X] codewars ( niv. 8 x 4)
+[ ] tester le refacto avec IntelliJ -> finallement, suivre la formation intégrée à l'IDE. Outils installés
+[ ] avancer MVP auto-compta ?
+
++ compta
++ tel aide ménagère 
++ tel coach
+
+SailPoint identity:
+https://finastra.identitynow.com/ui/d/dashboard
+q° : chat, prénom et nom grand-mère, Avenue avec la majuscule
+NB : il faudrait que je prévienne que les e-mails de cette plateforme là ne me parviennent pas;
+
+Lien vers learning sur la finTech dans intuition Know-how (donné par QN ds e-mail du 9 janvier 2023):
+https://learner.intuition.com/finastra/home?token=eyJhbGciOiJSUzI1NiIsImtpZCI6IjE2NjNFRTlCOEI4N0NENjA0QkJGQkNEMURGMjMwQTA3QjYxNUZCNTIiLCJ0eXAiOiJKV1QifQ.eyJqdGkiOiIwNGU4NjQ0NjllYWM0MDg1YWRkOTY0MGJmZTJjMTA4NSIsIm5hbWUiOiJzb3BoaWUudHJlYmF0aXVzQGZpbmFzdHJhLmNvbSIsIm9yZyI6IjE2NTAiLCJuYW1laWQiOiIyNTY2ODc5OSIsInJvbGUiOiJsZWFybmVyIiwibmJmIjoxNjgwMDg1NzcyLCJleHAiOjE2ODAxNzIxNzIsImlhdCI6MTY4MDA4NTc3MiwiaXNzIjoiQWR2YW50YWdlTlguQXV0aGVudGljYXRpb25TZXJ2aWNlIiwiYXVkIjoiQWR2YW50YWdlTlggQVBJIn0.A55fObNAV-ZTQ8XzCTYQyJozriPnRikd_H6fuYvDnNgwfrZcpW8tYtcluM9Ek4v19Xkv_MMHNg9ebW13fLnA08gOcNCKT5iE7z9ePqaZLqb64BV7WAjy4wkWV2lkaYCeLVR3V-yxOwxCdd3sM25xSt7dsIu3IeSW50QNn7VTfd32sbdSBZ_qNbcWFdPfZa3v7abhK5q6ztaDBLqdI9exjXr6teCozHJ2R0tdveRtdcQsM_AF1qx954H-UFiGAF_lbx1fh1gUUjDYji3uesuTTSa5RZjI6e9q0P-6zCRUEHdk2YnHLcfHK5WACk0a9wiHfjtzYQyxQ7Ni65VLZkxVmA
+
+
+
+
+### 31/03/23_Jeudi
+[?] rapport de suivi à Diego
+[X] read PRs :
+Explication d'Amira sur Fix/SFX-7864/date format not match browse settings : je ne savais pas qu'on pouvais régler sa langue dans le browser
+Explication de QN sur feat(Trade contribution): (FNX-2368) implements realtime updates
+et sur fix(Limit widget): (SFX-7811) always re-establish SSE connection on firm change :
+    Comment communiquer avec le serveur ? -> Websocket, dans les deux sens, ou
+    SSE - Serveur Send Event < class EventSource(url du serveur), à sens unique donc moins couteux/
+    ??'' c'est juste le fallback : undefined et null ne renvoient rien (une string vide)
+    Qn s'occupe dans ces PR de faire l'extraction de Pegasus d'un service de SSE puis l'utilise dans Trade Capture (drilldown)
+    Au moyen d'un observer (Rxjs), elle met en place l'affichage des modifs faites au drilldown en tps réel (par exemple la suppression d'un trade dans le tableau dont la suppression jusque là ne s'affichait qu'après refresh)
+[X] training to retake JS pluralsight : suite de Javascript fundamentals niveau intermédiaire
+
+
+
+### 1/04/23_Vendredi
+[X] rapport de suivi à Diego
+[ ] au daily : annoncé que j'allais prendre le ticket 3054 (https://jira.finastra.com/browse/FNX-3054) sur le conseil d'Amira, en attendant que AbsSort soit débloqué.
+
+NB : **Notes sur AbsSort** ça serait bien que j'arrive à quand même coder des belles fonctions ce WE qui font que :
+
+- AbsSort est bien paramétré (absSortEnabled = true | false ) -> ça marche mais bien se souvenir comment ça marche
+- la sauvegarde des infos sur la colonne (u.a. visibilité, tri ascendant ou descendant) doit se faire correctement
+- au moment où on choisit AbsSort, il faut que ça soit appliqué au tableau
+- au moment où on reload et au moment où on selectionne la vue où il y a un absSort, il faut que l'absSort qui a été paramétré ( quelle colonne a absSortEnabled et les infos sur la colonne) soit appliqué.
+
+Question auxiliaire :
+Pourquoi une colonne avec AbsSortEnabled rendue invisible reste invisible même si on la re-sauve après l'avoir réaffichée? peut-être une mise de côté quelque part de l'info. Il faut bien que la colonne avec AbsSortEnabled soit sauvée comme affichée.
+
+J'ai demandé à Cao une partie de Mah Jong quand ça sera possible, c'est toujours 4 joueurs.
+Je me suis ajoutée sur la partie de Wiegraf de rêve de Dragon ce soir.
+J'ai téléphoné à iconnectyou pour parler de la situation familiale + estime de soi et j'ai rdv à 19h avec une coach sur Task Human.
+
+FNX-3054 changer ctrl+alt+S pour icone oeil :
+- Figma me renvoyais sur mon espace perso de s.trebatius@gmail.com, il fallait que je me connecte avec mon adresse Finastra
+- Céline m'a indiqué où étaient stockées les icones de Robbie et les siennes dans le Team, et j'ai mis le lien et l'image qu'elle m'a envoyé sur le slack des dev pour faire passer l'info. Il faut que je la rajoute dans le bitbucket dont Cédric m'a envoyé le lien.
+
+End od day call : Philippe nous a montré le storybook du nouveau Alk-tree-menu (car il fallait refresh une nouvelle fois pour prendre en compte je ne sais pas quoi au sujet des NOB ? Nabil avait eu le même pb, c'était réglé)
+Cédric a discuté avec Thanh au sujet de la PR de Saurav sur le SSE sur la façon de récupérer tous les events avec : if (eventType === '*') { this.allEventsCallback...}
+Il trouvait qu'en utilisant une fonction plutôt qu'une fonction fléchée on récupérait le events qui étaient je ne sais plus où et qui étaient privés et on évitait de tous les récupérer comme c'est fait là. Mais finalement, pas top car ça fait rentrer dans un truc privé (un fichier, une liste?) par un biais détourné (donc pas clair et source de confusion?)
+
+### 3/04/23_Lundi
+discussion avec Saurav sur le nom des variables pour pouvoir merger le 2780 après ses commentaires.
+début du travail sur 3054 ajout du bouton flotant pour ouvrir le setup.
+tech session où l'on a travaillé sur la modification du bouton croix qui ferme le setup dans FNX-setup-ribbon pour qu'il devienne le bouton flottant quand le setup est caché.
+Mais je n'arrivais pas à faire fonctionner ça car peg-main cache tout FNX-setup-ribbon.
+Au end of day call et ensuite, discussion avec Cédric, qui m'a fait revoir le scope du ticket et le distinguer de 3057.
+Le bouton du 3054 est bien distinct.
+
+### 4/04/23_Mardi
+
+15h-16h technical grooming
+
+add alk-icons = merge dans develop de ma branche avec les nouvelles icones mais pas dispo tant qu'on a pas fait la release de la nouvelle version.
+Donc je ne pourrais pas merger mon travail sur pegasus utilisant les nouvelles alk-icons avant que cette release soit faite (par moi à priori);
+Mais je peux tester la nouvelle version en dev en la modifiant dans le package.json et avec npm install.
+Le nom de la version peut être récupéré en haut du build (ici 2.9.0-develop-60). Avec la release, QN dit que ça prendra encore un numéro (genre 2.10.0)
+Releaser consiste à mettre un tag sur la version de develop et décreter que c'est la nouvelle version si j'ai bien compris.
+
+Discussions avec Céline sur le design du bouton.
+Découverte d'informations contenues dans le storybook que je ne connaissait pas.
+
+Fin de journée : le bouton a un aspect correct et apparait quant il faut mais le onClick ne fait pas apparaître le setup.
+Lecture de quelques PRs
+
+### 5/04/23_Mercredi
+14h30 PDC functional grooming
+15h-16h SFX functional grooming
+
+Et j'ai passé le reste de la journée à essayer de trouver la solution à mon problème d'afficahge du setup, alors que la variable semblait correctement mise à jour;
+J'ai essayé un watch, de supprimer et ajouter la classe qui met le setup à hidden...
+
+Au end of day call et après avec Cédric qui est resté un moment pour vérifier mes breakpoints etc, pas de solution non plus mais on a pu identifier que mes circonvolutions ne valaient rien et que le state isSetupVisible passait de false à true sans raison apparente au niveau de showSetup() donc a priori le render ne se faisait pas.
+
+### 6/04/23_Jeudi
+Finalement Saurav et Amira ont trouvé qu'il fallait que je remplace ma fonction par une fonction fléchée.
+Tout marche dans peg-main.
+Il me reste à finir de placer le bouton dans un composant sur le modèle de celui qui ferme le setup qui est l'essentiel de FNX-setup-Ribbon.
+Lecture de quelques PRs
+
+Beaucoup de discussions avec Nabil au sujet de Absolute Sorting pour lui montrer ce que je savais du feature.
+
+Un cours de Cédric sur le tag slot et ses usages et une explication sur pourquoi le this n'était pas le bon avec la fonction normale dans le 3054
+
+Insciption finie sur le site du CE. Code = J'..
+
+17h30 : cours de pilates, que moi, travail notamment sur position pour ne pas avoir mal aux poignets (épaules basses (la gauche remonte), coudes pas vers l'extérieur)
+18h30 : cours de Yoga
+21h45 : retrouvé Hyppolyte pour manger au resto vers chez lui;
+
+### 7/04/23_Vendredi
+
+Arrivée un peu tard, pour le daily scrum
+le temps de prendre un café
+10h45 brief de Diego sur refacto et web worker dans Pegasus
+12h15 séance guidée muscu : alterner 15 rep machine dos/épaules et 15 pompes sur le banc
+13h Boxe
+Transformation du bouton qui marche dans peg-main en un component à part entière.
+3054 fini, les tests et 2/3 éléments erronés revus avec Diego pendant la tech session du soir.
+nb : pour utiliser template et qu'on donne un tag, le fichier doit être en .tsx (en x en fait)
+En tapant 1Opx to rem dans google, en bas de la liste qu'on peut ouvrir on a un outil pour transformer les px en rem précisément.
+C'est dans figma qu'on a récupéré l'info exacte du nombre de pixels, dans la vue ux (outils? le truc à cliquer au milieu quand on était sur le prototype cliquable)
++ j'en ai profité pour poser les questions sur la réu du matin : overlay?, "rollup"(c'est un bundler, comme Babel, et celui utilisé par stencil, et postinstall?)
+
+NB : pour vérifier qu'une block est bien displayed dans la page quand il faut dans les tests on peut check if display: block ou si l'élément a une size (si c'est display : none, l'élément n'aura pas de taille.)
+
+### 9/04/23_Lundi
+férié (pâques)
+Début crea app pour accompagner FinVenture de Ramila (stack : stencilJS ? Django ? précisions sur le tableau et les calculs de la 1ère page à réaliser + prepa pseudocode)
+
+### 10/04/23_Mardi
+comme un lundi. Bureau. QN, Amira, Philippe et Cédric là.
+Travail avec IntelliJ et lecture des bulles d'infos, tutos.
+C’est comme avoir un prof et MDN intégrés dans l’IDE mais c’est plus lent et trop d’infos me perdent pour travailler quand il ne s’agit pas d’étudier en profondeur toutes les 2 minutes.
+
+11h-12h : sprint planning
+
+Le FNX-3054 est fini : création d'environnement mais pas d'environnement up pour le moment; Passage à la colonne ready for PO. 
+Remarque sur PR -> retrait de la classe CSS 'hide-setup' qui n'a plus lieu d'être pour une string vide (mettre undefined faisait rater les tests, c'était plus simple mais j'aimerai comprendre pourquoi)
+Malgré l'absence de rapport, retour de Philippe E. Dans l'après-midi : on ne voit qu'un carré mauve (comme localement quand les nouvelles icônes n'avaient pas été ajoutées à Alk-icons ) et changer le texte du tooltip -> fait, et j'avais oublié de pusher la modif de version de alk-icon dans le package.json.
+
+15h-16h technical grooming
+
+Lecture PRs
+
+Lecture des tickets Jira pour en trouver un à faire car AbsSort est encore en suspend en attendant le refactoring de Diego;
+-> FNX-2885 shorten tag name of the Drilldown (diff iculté : 3)
+-> FNX-3057 RV 2.0 - Report Ribbon redesign serait trop sympa mais difficulté : 5, donc les autres me conseillent de prendre l'autre
+
+### 11/04/23_Mercredi
+e-mails, admin : mais le truc à faire sur Workday prend trop de temps, il faut se préparer pour kids day
+Je me fait un nouveau dossier projet dans intellij, sans node pour l'instant, pour me faire une page html basée sur mon planning (pour bricoler avec html, SCSS et JS)
+Aprèm Kids Day; avec Olivier, Althéa et Roderic dans le bus, le RER, au Washigton Plaza. Sandwichs là-bas...
+La journée est passée très vite et je n'ai pas pu travailler.
+
+### 12/04/23_Jeudi
+10h15 : daily scrum
+FNX-2885 shorten tag name of the Drilldown :
+[X] créer ma branche
+[ ] faire la modif
+[ ] tester localement
+[ ] faire et publier la PR
+[ ] créer l'env, passer à ready for PO
+
+Notes sur FNX-2885 : 
+PRs potentiellement utiles :
+feat(open deal): (FNX-2284) Launch Open Deal action --> https://scm-git-eur.misys.global.ad/projects/FNX/repos/fnx-pegasus-reporting/pull-requests/232/overview
+feat(report charts): (FNX-2731) add execution to tab name --> https://scm-git-eur.misys.global.ad/projects/FNX/repos/fnx-pegasus-reporting/pull-requests/262/overview
+
+Pour ouvrir un drilldown, dans pégasus, selectionner une ligne, de préférence dans un report avec "position" dans le nom, 
+pour avoir Trace Capture dans le menu contextuel en faisant clic droit dans les données. (les options dispos pour ce rapport sont determinées par une liste de prop envoyée par le back-end)
+
++ correction de l'opacité du floating button après message d'Eugene pour la passer à 0.8 comme spécifié dans le ticket
+
+[X] Workday : auto-évaluation RRR et désigner 3  pers pour feedback
+[X] lire des PRs
+[X] e-mails
+[ ] check kimble
+[X] demander des jours de vacances
+[X] codewars x 2
+[ ] pluralsight : 30 min
+finir pseudocode pour finventure et setup env
+ranger bureau
+pilate & yoga
+jardinage
+tel notaire Lyon puis Crécy
+tel lawyers : cf partage Rachel sur task human et Bianca sur discord 
+
+### 13/04/23_Vendredi
+
+
+
+### 18/04/23_Mardi
+
+Tech grooming : PDC
+
+Karma est un framework, qui fournit plein d'outils, un peu comme les alk-components de FNX. C'est en java.
+4 apps utilisent ce framework : WebAccess, Trade Capture, KGS ? et ?, ça fournit tout ce qu'il faut.
+
+**FNX-2885 shorten tag name of the Drilldown :**
+see PR feat(report): (FNX-2345) Business UI logic - Apply label for Report tables de Amira https://scm-git-eur.misys.global.ad/projects/FNX/repos/fnx-pegasus-reporting/pull-requests/234/diff#src/service/reporting-data/reporting-data.service.ts
+ -> info de graphQL à récup pour actionLabel est dans services/reporting-data/reporting-data.service.ts de Pegasus
+
+explications de Philippe sur l'injection de service. Ce service des par exemple utilisé (injecté) dans grid-data. NB : un service peut utiliser un autre service, comme un component peut utiliser un autre component
+
+Config.ioc.ts : ce fichier apparait pour chaque app et à chaque fois il s'agit d'instances différentes des services, elles n'ont rien en commun.
+Trouver comment Pegasus livre ses infos à trade contrib -> See also de Diego, PR FNX-2673 du 25/02 commit "include adaptable..., que j'ai retrouvé via "commits" dans le ticket jira cherché dans la recherche de jira en haut à droite (merci QN)
+
+Notes du soir : A priori ce qu'on veut (actionType), n'est pas dans l'interface utilisée auj dans le tabName, mais dans IDrilldownViewConfigurationPayload. C'est le action type de ETableActionType qui nous interesse (.drilldown?)
+
+cf in trade-contrib-launching.service.specs :
+
+        describe('registerToShowDeals', () => {
+            const payloadData: IDrillDownViewConfigurationPayload = {
+                configuration: { ..
+                    action: {
+                        label: 'action name',
+                        payload: {
+                            type: ETableActionType.DrillDown,
+                        },..
+    
+
+### 19/04/23_Mercredi
+Home office
+PB de rebase de 3054 avant de merger à cause du 'big refacto' de Diego 
+Echange avec QN, le matin, mais rebase ne passe pas. Hypothèse : rebaser sur develop puis ajouter les new modifs à la main. Mais elle est en réu jusqu'à 16h30 et je dois écouter la réu sur la RRR evaluation annuelle;
+Avec Cédric, recherche de ce qui bloque sans trouver
+Je cherche à créer une branche propre que j'appelle de la même façon dans l'idée de la rebrancher sur la branche distante qui a la PR après.
+Medecin à 16h30
+Gros coup de fatigue
+
+### 20/04/23_Jeudi
+Au bureau
+Aide de QN pour gérer le rebase.
+Retrait des commits avec un reset soft (ce qui garde les modifs que l'on peut alors stasher, un reset hard supprime tout ce qui est après le commit choisit complètement)
+Le refacto de Diego a créé des problèmes à QN déjà car sur Pegasus il a upgradé Stencil, donc il lui faudrait upgrader node pour que ça marche ? Finalement pour ma machine, ça n'est pas ça qui bloquait mais un import dans le fichier storybook créé automatiquement lors de la création du component fnx-open-setup-button. En supprimant l'import, ça passe.
+
+**Gérer un rebase difficile**
+Pour les conflicts, vérifier si necessaire l'état de develop sur bitbucket pour comparer avec les modifications que l'on veut faire.
+
+On peut revenir sur les commits fait avec les outils de VSCode pour rebase avant d'ajouter ses modifs.
+
+Mieux lire les erreurs !
+
+1- Créer une copie de la branche
+2- Pour retirer les commits gênants pour le rebase : depuis le commit à garder, reset soft -> preserve les modifs des commits supprimés (à retrouver dans la vue source control et on peut alors les stasher pour les réappliquer après)
+3- stash
+4- rebase (fetch etc)
+5- check  : npm i, npm build, npm run test
+6- git push -f
+
+**Collection de recommandations de Cédric**:
+https://www.pierre-giraud.com/html-css-apprendre-coder-cours/position/
+les icones sont visibles ici : http://10.21.230.54:49518/storybook/?path=/story/atoms-alk-icons--icons
+
+Capacity Planning :
+kondor ui
+une colonne par sprint
+la date indique le 1er jour de chaque sprint
+et chaque sprint dure 3 semaines
+il faut additionner les jours de congés prévus par toi et les jours déjà mis qui correspondent aux jours fériés
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Language_Overview
+https://www.digitalocean.com/community/tutorials/understanding-destructuring-rest-parameters-and-spread-syntax-in-javascript
+https://cdiese.fr/syntaxe-typescript-en-10-min/
+
+### 21/04/23_Vendredi
+Avec Thanh, mock data tool: 
+nb il a fallu rajouter l'import de writefile dans les templates/generators/replay-data.js de pegasus, report-manager et launcher
+et nous avons ajouté le service de mock dans le plop de fx-trade-contribution
+ça marche pour les rapports de pegasus et report-manager mais pas pour trade-contribution à cause des real-time updates/SSE/quieries (je ne me souviens plus de la formulation exacte employée par Thanh)
+
+Pour se service du mock data service, lire la doc;
+En résumé :
+plop env sur rancher dev (ou autre ça a l'air de marcher aussi s'il y a des rapports NDRl)
+plop record une fois sur tous les env/terminal des repos concernés mais ne lancer le script qu'une fois, depuis le terminal de launcher par ex.
+puis faire ses manips pour record les rapports utiles
+puis ctrl+C
+puis nxp kill proxay (verif sur la doc la commande exacte)
+on peut alors vérifier les enregistrements dans le dossier "reports" à la racine du repo
+ensuite on passe à plop replay
+à faire une fois sur chaque repo/env concerné mais
+on ne joue le script qu'une fois depuis launcher (ça lance tous les proxay necessaires)
+pour arrêter : ctrl+c et npx proxay kill (ou commande corrigée)
+
+Avec Cédric, 2885:
+L'idée est d'ajouter l'info du action label name à ce qui passe de pegasus à trade-contrib.
+Solution simple adoptée pour éviter d'avoir à releaser une nouvelle version de alk... vers lequel data-reporting (ou je ne sais plus quoi) a été déplacé par le refacto de Diego.
+
+Toujours bien vérifier que ça build avant les test pour être alerté si erreur à ce niveau là.
+
+(edit après 3 jours off, pas d'environnements dispo pour l'instant
+le Soir : un truc clochait mais je ne sais plus quoi. A retester (+ push ?) dès que possible)
+
+add under getViewTitle de fnx-trade-contrib-main.utils.ts:
+// change here ? FNX 2885 Drilldown window name is: '[action label] - [report label] - [config name]'
+    console.log({ startupData });
+
+
+### 27/04/23_Jeudi
+Retour après 3 jours off + WE, où j'ai principalement dormi à cause de la carence en fer carabinée avérée par une prise de sang
+Taux de Ferritine à 5 ng, apparemment c'est bien bien bas
+
+[X] Appel à la notaire à Lyon
+
+14h Functionnal Grooming :
+**cloud margin** : UI to be able to use standalone apps from our parteners -> specific url to add
+"collateral management app" ?
+licence check would be part of the user rights < to be checked by back-end ?
+**freeze data feed** : to be done in the front or back-end ?
+**tooltip for columns**: subject of the column?
+**tooltip to show full amount when shorten in the cell**
+
+**Notes sur FNX-2885 :** 
+En gros, pour récupérer le actionLabel dans le tab name du drilldown, il fallait l'ajouter aux infos passées de Pegasus au Drilldown, donc label: string ajouté IDrillDownStartupData (et là je réalise que j'ai oublié de faire une branche pour Pegasus parce que c'est sur deux repos donc deux PRs, duh 
+)
+
+Bref, le problème de build est sur la branche de FNX-FX-TradeContribution.
+Qui récupère l'info et le tab name s'affiche comme il fallait. En local ça build et les tests passent. Mais sur Jenkins, ça plante au moment du "execute".
+Les erreurs sont les suivantes (4 ou 5 erreurs identiques, je n'en met qu'une) :
+2885 : erreur d'un import non utilisé (ITableActionDataPreloaded from ../../interfaces) supprimée mais des erreurs au build jenkins subsistent alors que ça passe le build local
+build feat/FNX-2885/shorten-drilldown-window-name
+#3
+Property 'label' is missing in type '{ id: string; config: undefined; context: string; reportName: string; reportLabel: string; configName: string; isDefault: false; namespace: string; table: string; dataRows: { __ROW_ID__: string; }[]; username: string; columns: undefined; }' but required in type 'IDrillDownStartupData'.
+17:53:05  ERR! [at-loader] ./src/components/fnx-trade-contrib-trades/fnx-trade-contrib-trades.spec.ts:210:34 
+et d'autres pareil, mais si je rajoute label là j'ai :
+dans le build #5:
+17:53:05  ERR!     TS2352: Conversion of type '{ id: string; config: undefined; context: string; reportName: string; reportLabel: string; configName: string; isDefault: false; namespace: string; table: string; dataRows: { __ROW_ID__: string; }[]; username: string; columns: undefined; }' to type 'IDrillDownStartupData' may be a mistake because neither type sufficiently overlaps with the other. If this was intentional, convert the expression to 'unknown' first.
+
+Edit du 28/04 : il fallait bien continuer à rajouter label: 'string' partout où c'était nécessaire mais pour voir l'erreur en local il fallait **supprimer le dossier www, node-modules** pour repartir sur un build clean, refaire un npm install du coup et jouer **npm run storybook.build** (npm run build ne fait pas ça en local)
+
+### 28/04/23_Vendredi
+[X] book coaching session with Rachel Simeone : demain 14h
+[ ] annuler RDV avec Forgeot-Ballanant
+
+Priorités :
+[X] Read PRs (explications pour de Cédric pour sa PR sur le delete report button)
+[X] finish 2885 :
+    - créer la branche de Pegasus pour transmettre le actionLabel name vers le drilldown + PR
+    - faire corrections pour faire passer le build Jenkins et PR pour la branche de trade-contrib
+    - créer un env. avec les branches pour pegasus et trade-contrib
+[ ] cours pluralsight JS fundamentals et retake test JS
+
+[ ] save notes JdB
+[ ] ckeck usage cloud et sauvegardes en cas de crash PC ou Vbox
