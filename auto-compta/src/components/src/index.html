@@ -1,16 +1,53 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
-    <title>Stencil Component Starter</title>
+    <title>Auto-compta first draft</title>
 
     <script type="module" src="/build/components.esm.js"></script>
     <script nomodule src="/build/components.js"></script>
   </head>
+
   <body>
-    <my-component name="Antakathena" first="This is a test." age=42 last="I study Stencil JS"></my-component>
-    <my-modal my-title="modale graphiques"></my-modal>
-    <my-table my-title="titre du tableau"></my-table>
+
+
+    <header>
+      <h1>Auto-compta First Draft</h1>
+      <nav>
+        <ul>
+          <li><a href="#compte1">Compte 1</a></li>
+          <li><a href="#synthese">Synthèse</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+
+      <my-component name="Antakathena" first="This is a test." age=42 last="I study Stencil JS"></my-component>
+      <my-modal my-title="modale graphiques"></my-modal>
+      <my-table my-title="titre du tableau"></my-table>
+
+      <section>
+        <h2 id="compte1">Compte 1</h2>
+        <h3>Relevé d'opérations</h3>
+        <h3>Opérations par catégories</h3>
+        <h3>Total des dépenses par catégories</h3>
+        <h3>Résultat</h3>
+        <aside>
+          <h3>Chèques utilisés</h3>
+        </aside>
+        <aside>
+          <h3>Graphique dépenses par catégories</h3>
+        </aside>
+      </section>
+      <section>
+        <h2 id="synthese">Synthèse</h2>
+        <h3>Résultat du mois</h3>
+        <h3>Total des dépenses par catégories tous comptes confondus</h3>
+      </section>
+    </main>
+
+
   </body>
 </html>

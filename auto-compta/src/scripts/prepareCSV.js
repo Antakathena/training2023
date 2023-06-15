@@ -6,7 +6,7 @@ import * as fs from 'fs';
 
 // VARIABLES
 const notNeeded = ['CB', 'PRL', 'VIREMENT'];
-const fileName = 'cptaSo_Dec';
+const fileName = 'cpteCo2023_02';
 const filePath = `../statements/${fileName}.csv`;
 const myCsvArray = extractLines(extract(filePath));
 myCsvArray.pop();

@@ -100,39 +100,43 @@ Je ne trouve pas setup dans le menu contextuel des tab name
 - Amira a des problèmes pour tester les filtres, apparemment les environnements recommencent à débloquer
 
 ### 5/01/23_Jeudi
-[X] e-mails
-[ ] valider licence IntelliJ et installer
-[X] valider licence Pluralsight et explorer
-ticket 2833 focus mode
-[X] functional grooming FNX :  14h
-[X] functional grooming SFX : 15h30
-[ ] PRs
-[ ] faire la demande pour autres jours de congé à utiliser en janvier
+[X] e-mails  
+[ ] valider licence IntelliJ et installer  
+[X] valider licence Pluralsight et explorer  
+[ ] ticket 2833 focus mode  
+[X] functional grooming FNX :  14h  
+[X] functional grooming SFX : 15h30  
+[ ] PRs  
+[ ] faire la demande pour autres jours de congé à utiliser en janvier  
 
-**Daily scrum**
-*Magda on a sick leave*
-use Gamma env for other env not working?
-    nb : multi-user test planned
-    gamma doesn't handle ? so nead to user openfin...
-NB : Philippe C. could not pass his ticket FNX-1998 to the PO column : if priority is critical, need to click and indicate review is done before mooving it to the PO column.
-A mon tour :
-    2651 -> PO mais il faut faire un ticket pour la persistence
-    2791 -> set view when...
+**Daily scrum**  
+*Magda on a sick leave*  
+use Gamma env for other env not working?  
+    nb : multi-user test planned  
+    gamma doesn't handle ? so nead to user openfin... 
+
+NB : Philippe C. could not pass his ticket FNX-1998 to the PO column : if priority is critical, need to click and indicate review is done before mooving it to the PO column.  
+A mon tour :  
+    2651 -> PO mais il faut faire un ticket pour la persistence  
+    2791 -> set view when...  
     - feedback of pull request : checked if it doesn't have effects on other events
-    2833 focus mode -> only in openfin
+    2833 focus mode -> only in openfin  
 
-- tentative de passer sur l'env Gamma
-- problème : pas de TDD en fin de matinée; à checker après le dej
+- tentative de passer sur l'env Gamma  
+- problème : pas de TDD en fin de matinée; à checker après le dej  
 
-**Functional grooming**
-- rapide
-**SFX grooming**
-TODO : taper notes
+**Functional grooming** (rapide)  
+**SFX grooming**  : TODO : taper notes
 
-Fin de journée : pluralsight. Test plateforme, vidéo d'intro finastra (45 min), test JS et test TS
-End of day call: question quel est le nom de l'elt caché révélé avec ctrl + shift + S (pour m'en inspirer pour faire le 2833)
-Thanh et Cédric ne comprennent pas ma question; 
-leçon à tirer : apprendre à **adapter mon discours pour les dev** (vocabulaire/jargon tech, u.a en français (plus de lectures en anglais _ comment palier à ça?) + ne pas passer du coq à l'âne, comme d'hab. Les devs sont humains et ne lisent pas dans ma tête donc passer par des intros ou autre. Exemple : "Dans le code, ..." pour indiquer qu'on passe du registre fonctionnel au registre technique)
+**Fin de journée :**  
+pluralsight : découverte de la plateforme, test JS et test TS  
+vidéo d'intro finastra (45 min), 
+
+**End of day call:**  
+Je demande quel est le nom de l'elt caché révélé avec ctrl + shift + S (pour m'en inspirer pour faire le 2833)  
+Thanh et Cédric ne comprennent pas ma question;   
+leçon à tirer : apprendre à **adapter mon discours pour les dev** :  
+(vocabulaire/jargon tech, u.a en français (plus de lectures en anglais _ comment palier à ça?) + ne pas passer du coq à l'âne, comme d'hab. Les devs sont humains et ne lisent pas dans ma tête donc passer par des intros ou autre. Exemple : "Dans le code, ..." pour indiquer qu'on passe du registre fonctionnel au registre technique)
 
 ### 9/01/23_Lundi
 TODO : taper notes
@@ -272,7 +276,7 @@ Qui m'a fait de la pub pour boxe des autres jours aussi avec Jean(?) Boxe poings
 
 Liste casier sport :
 - bouteille d'eau
-- basquettes
+- baskets
 - legging
 - bra
 - top
@@ -291,7 +295,7 @@ Admin :
 [X] Kimble en fin de semaine (edit 06/02, fait en retard)
 [ ] notes au clair
   
-Developpement :  
+Development :  
 [X] PRs (pomodoro session) (edit : il en reste plein)
 
 [ ] ticket FNX-2862_save visibility of column filter (pegasus) :
@@ -312,7 +316,7 @@ Formation :
 [ ] fiche async/await
 [ ] compiled vs interpreted (comprendre l'ordre de traitement des infos par JS)
 
-Developpement :  
+Development :  
 [X] PRs (pomodoro session)
 [X] merger FNX-2833_focus-mode
 [X] ticket FNX-2862_save visibility of column filter (pegasus) :
@@ -443,7 +447,7 @@ FNX-2791
 Echange avec Cédric puis Philippe Escoffier pour préciser ce qui était attendu pour FNX-2791 :
 Cédric m'a au passage expliqué ce qu'est le mode pivot et le grouping.
 J'ai vérifié, toutes les actions qui ne sont pas déjà concernées par un autre ticket rendent déjà la vue dirty
-et la modif est réappliquée lorsque la vue est selctionnée.
+et la modif est réappliquée lorsque la vue est sélectionnée.
 
 Détail :
 [X] - resize column,
@@ -461,7 +465,7 @@ Détail :
 [x] - close chart
 
 ### 13/02/23_Lundi
-A la maison. Grande fatigue, au lit tout la journée.
+A la maison. Grande fatigue, au lit toute la journée.
 
 Je procède aux Rebase, merge conflicts réglés
 Lecture de PRs
@@ -469,7 +473,7 @@ FNX-2862 hidden/shown filter bar persistence :
 Je ne comprends pas pourquoi ça fonctionnait, ça ne fonctionne plus. Je cherche, 
 Finalement : j'y crois pas, j'ai un problème similaire à celui de focus mode,
 En fonction de l'utilisateur, ça marche ou pas.
-I.e : avec touser6, pas de problème mais avec kplus ça ne marche pas, le filtre repointe toujours le bout de son nez.
+I.e : avec touser6, pas de problème, mais avec kplus ça ne marche pas, le filtre repointe toujours le bout de son nez.
 
 Problème réglé avec ajout d'un if sur le conseil de Diego.
 Security training
@@ -731,32 +735,37 @@ Avec futur ticket si pas réglé là :
 -> [ ] on doit pouvoir retirer et faire revenir une colonne avec un absSort actif
 
 ### 07/03/23_Mardi
+*Grève générale. 1 train sur 2 ou 4, Althéa à la maison;*
+*au bureau*
 
-Grève générale. 1 train sur 2 ou 4, Althéa à la maison;
-Galère sur Absolute Sorting
-AU bureau : Cédric revoit mes console.log, en fait j'imprimais une variable locale pour le deuxième comparator.
-On a cherché dans blame dans le repos bitbucket dans pegasus > src > components > peg-table pour trouver ce qui avait pu faire débloquer le tri/provoqué la régression.
-Mon idée d'utiliser onSortChange dans gridOptions et de le déclencher au chargement de la vue ne va pas d'après Cédric (ça serait comme de s'appeler soit même au lieu de laisser adaptable nous appeler quand il est près)
-Possible que puisqu'il faut attendre au chargement de la vue qu'on ait récupéré toutes les infos d'adaptable et ag-grid et que le initAbsSort n'est près à ajouter l'info du type ABSOLUTE qu'une fois qu'on a chargé certaines de ces choses, ça arrive trop tard, après un sort basique qui a déjà été fait (mais alors pourquoi est-ce que l'icone de abs-sort est appliquée ?)
+**Galère sur Absolute Sorting -> recours à Blame sur Bitbucket**  
+Cédric revoit mes console.log, en fait j'imprimais une variable locale pour le deuxième comparator.
+On a cherché dans **blame** dans le repos bitbucket dans pegasus > src > components > peg-table pour trouver ce qui avait pu faire débloquer le tri/provoqué la régression.  
+Mon idée d'utiliser onSortChange dans gridOptions et de le déclencher au chargement de la vue ne va pas d'après Cédric  
+(ça serait comme de s'appeler soit même au lieu de laisser adaptable nous appeler quand il est près)  
+
+Possible que puisqu'il faut attendre au chargement de la vue qu'on ait récupéré toutes les infos d'adaptable et ag-grid et que le initAbsSort n'est près à ajouter l'info du type ABSOLUTE qu'une fois qu'on a chargé certaines de ces choses, ça arrive trop tard, après un sort basique qui a déjà été fait (mais alors pourquoi est-ce que l'icone de abs-sort est appliquée ?)  
+
 L'idée serait, à la place de déclencher mon sortChange, de créer une fonction "applyAbsSort" qui utilise agGrid.gridOptions.applyColumnState() pour appliquer quand on veut (une fois la grille prête ou juste après le setAbsSort par exemple) les infos correctement paramétrées par initAbsSort dans la colDef.
 
 ### 08/03/23_Mercredi
-Télétravail.
-Patraque et les enfants remuants.
+*Télétravail. Patraque et les enfants remuants.*
 
 Travail sur ApplyColumnSorting etc toute la journée sans succès.
 J'ai des problèmes d'affichage dans VSCode sur la VBoxe (essai de réunir tout absSort dans un fichier -> pb pour supprimer un fichier, écran saute -> en ligne de commande; pas possible d'ajouter un dossier au workspace (edit : en fait si, j'avais ajouté plein de choses mais à l'aveugle et c'est à cause de ça que j'ai à rentrer 15 fois mot mot de passe))
 
 vers 16h Français avec Saurav
 
-Call du soir : Amira aussi a des pb d'affichage de son IDE (intelliJ pour elle), d'après Thanh c'est un problème d'utilisation de la carte graphique par la nouvelle version de la VBox (ou kernel (pas sûre d'avoir compris)) donc il va falloir trouver le bon réglage pour que ça marche.
+**Call du soir :**  
+Amira aussi a des pb d'affichage de son IDE (intelliJ pour elle), d'après Thanh c'est un problème d'utilisation de la carte graphique par la nouvelle version de la VBox (ou kernel (pas sûre d'avoir compris)) donc il va falloir trouver le bon réglage pour que ça marche.  
+
 Et aussi : essayer d'implementer ce que je veux en utilisant adaptable.SortAPI
 
 
 ### 09/03/23_Jeudi
-Pas la pêche, départ pour le bureau après le daily.
+*Pas la pêche, départ pour le bureau après le daily.
 Cédric au bureau et plein de back-end, bureau 65
-Pilates et Yoga en fin de journée
+Pilates et Yoga en fin de journée*
 
 Lecture doc adaptable.SortAPI
 Pas d'environnement.
@@ -1158,19 +1167,19 @@ pour avoir Trace Capture dans le menu contextuel en faisant clic droit dans les 
 
 + correction de l'opacité du floating button après message d'Eugene pour la passer à 0.8 comme spécifié dans le ticket
 
-[X] Workday : auto-évaluation RRR et désigner 3  pers pour feedback
-[X] lire des PRs
-[X] e-mails
-[ ] check kimble
-[X] demander des jours de vacances
-[X] codewars x 2
-[ ] pluralsight : 30 min
-finir pseudocode pour finventure et setup env
-ranger bureau
-pilate & yoga
-jardinage
-tel notaire Lyon puis Crécy
-tel lawyers : cf partage Rachel sur task human et Bianca sur discord 
+[X] Workday : auto-évaluation RRR et désigner 3  pers pour feedback  
+[X] lire des PRs  
+[X] e-mails  
+[ ] check kimble  
+[X] demander des jours de vacances  
+[X] codewars x 2  
+[ ] pluralsight : 30 min  
+finir pseudocode pour finventure et setup env  
+ranger bureau  
+pilate & yoga  
+jardinage   
+tel notaire Lyon puis Crécy  
+tel lawyers : cf partage Rachel sur task human et Bianca sur discord   
 
 ### 13/04/23_Vendredi
 
@@ -1221,21 +1230,21 @@ Aide de QN pour gérer le rebase.
 Retrait des commits avec un reset soft (ce qui garde les modifs que l'on peut alors stasher, un reset hard supprime tout ce qui est après le commit choisit complètement)
 Le refacto de Diego a créé des problèmes à QN déjà car sur Pegasus il a upgradé Stencil, donc il lui faudrait upgrader node pour que ça marche ? Finalement pour ma machine, ça n'est pas ça qui bloquait mais un import dans le fichier storybook créé automatiquement lors de la création du component fnx-open-setup-button. En supprimant l'import, ça passe.
 
-**Gérer un rebase difficile**
+## Gérer un rebase difficile
 Pour les conflicts, vérifier si necessaire l'état de develop sur bitbucket pour comparer avec les modifications que l'on veut faire.
 
 On peut revenir sur les commits fait avec les outils de VSCode pour rebase avant d'ajouter ses modifs.
 
 Mieux lire les erreurs !
 
-1- Créer une copie de la branche
-2- Pour retirer les commits gênants pour le rebase : depuis le commit à garder, reset soft -> preserve les modifs des commits supprimés (à retrouver dans la vue source control et on peut alors les stasher pour les réappliquer après)
-3- stash
-4- rebase (fetch etc)
-5- check  : npm i, npm build, npm run test
-6- git push -f
+1- Créer une copie de la branche  
+2- Pour retirer les commits gênants pour le rebase : depuis le commit à garder, reset soft -> preserve les modifs des commits supprimés (à retrouver dans la vue source control et on peut alors les stasher pour les réappliquer après)  
+3- stash  
+4- rebase (fetch etc)  
+5- check  : npm i, npm build, npm run test  
+6- git push -f  
 
-**Collection de recommandations de Cédric**:
+## Collection de recommandations de Cédric:
 https://www.pierre-giraud.com/html-css-apprendre-coder-cours/position/
 les icones sont visibles ici : http://10.21.230.54:49518/storybook/?path=/story/atoms-alk-icons--icons
 
@@ -1282,6 +1291,7 @@ add under getViewTitle de fnx-trade-contrib-main.utils.ts:
 // change here ? FNX 2885 Drilldown window name is: '[action label] - [report label] - [config name]'
     console.log({ startupData });
 
+### Lundi 24/04/23 au Mercredi 26/04/23 : off
 
 ### 27/04/23_Jeudi
 Retour après 3 jours off + WE, où j'ai principalement dormi à cause de la carence en fer carabinée avérée par une prise de sang
@@ -1329,3 +1339,4 @@ Priorités :
 
 [ ] save notes JdB
 [ ] ckeck usage cloud et sauvegardes en cas de crash PC ou Vbox
+

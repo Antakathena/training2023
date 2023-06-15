@@ -294,11 +294,11 @@ PR Saurav/ le bouton export vers excell dans FRX:
 VS code : installer extension Eslint et Gitlens
 
 ### 18/10/2022_Mardi  
-grève des transports
+Grève des transports
 matin : Scrum puis HR induction, puis rejoindre le tech. grooming dès que possible
 aprèm : rdv atelier zéro déchet Linda équipe ESG (nb :Cédric a rejoint l'équipe ESG)
 
-mettre à jour les repo
+Mettre à jour les repo
 ajouter la variable "default items" à peg.
 
 ranger dev down donc passer sur le serveur de compose -> changer config dans les iodc.json files et les app.json dans les repos
@@ -312,21 +312,21 @@ Faire les stash config pour les autres repos demain.
 - mutuelle Hélium : remplir le papier
 - add my picture to workday, teams etc
 - suivre le cours d'intro sur Finlearn (cf mails)
-- installer Gitlens et autres extensions VSCode recommandées dans:
+- installer Gitlens et autres extensions VSCode recommandées dans :
     **Teams de Treasury UX initiative > Technical design > VSCode**
-        c'est à dire :
+        c'est-à-dire :
             Gitlens
             EditorConfig (pour utiliser le script de config de code présent dans les repo qui parmatre les éditeurs de code pour utiliser les normes voulues par l'équipe)
             ESLint
             Material Icon Theme
             NPM Intellisense
             TODO Highlight
-            Swagger VIewer (qui m'a demandé d'installer aussi YAML)
+            Swagger Viewer (qui m'a demandé d'installer aussi YAML)
             Compare Folders
 - créer des stash pour chque config pour Pegasus-reporting et Report-Manager
 - formation aux array's methods. u.a. cf liens vidéos dans :
     **Teams de Treasury UX initiative > Technical design > Trainings**
-- finir le ticket 2649 : add Const DefaultItems et filter les Items pour n'avoir que les nécéssaires
+- finir le ticket 2649 : add Const DefaultItems et filter les Items pour n'avoir que les nécessaires
 - attaquer le ticket 2435
 
 - si fait : check zsh, terminal terminator, ssh knowledge
@@ -348,15 +348,15 @@ getMainMenuItems: (params: GetMainMenuItemsParams) => params.defaultItems.filter
 
 ### 20/10/2022_Jeudi
 
-daily scrum
-préparation de la correction de PR pour 2649 + reply au commentaire de diego
-ostéo à 11h30
+*ostéo à 11h30*
 
-pb copier-coller de linux vers windows (< mise à jour ?) : redémarrage machine virtuel a résolu le pb
-lecture PR
+**daily scrum :**  
+préparation de la correction de PR pour 2649 + reply au commentaire de diego  
+
+
+pb copier-coller de linux vers windows (< mise à jour ?) : redémarrage machine virtuel a résolu le pb  
+lecture PR  
 pb pour push et fetch --all entre VScode et Git
-
-
 
 ### 21/10/2022_Vendredi
 
@@ -515,7 +515,7 @@ Pb de port : compose ne s'ouvre plus sur localhost 3360 malgré le port changé
 --taper notes--
 
 Determiner quel programme utilise ou bloque un port :
-Using Netstat command:
+Using Netstat command :
 
 - Open a CMD prompt
 - Type in the command: netstat -ano -p tcp
@@ -552,7 +552,7 @@ passer aussi les http: en https:
 
 **oidc.json :**
 pareil pour "redirect_uri", ""post_logout_redirect_uri" et "silent_redirect_uri" qui sont en https pour rancher dev et http pour compose
-edit : attention que l'url corresponde à celle voulue dans le oidc.json du TDD choisi' (ex: oidc-provider:8000 si c'est celle utilisé par compose, à vérifier en lançant le TDD de compose et ajouter manifests/oidc.json à la fin) pour avoir un token d'identification qui satisfasse le backend. Pas de difference de MP ou ID sinon mais le backend n'enverra pas les rapports par exemple.
+edit : attention que l'url corresponde à celle voulue dans l'oidc.json du TDD choisi' (ex : oidc-provider:8000 si c'est celle utilisé par compose, à vérifier en lançant le TDD de compose et ajouter manifests/oidc.json à la fin) pour avoir un token d'identification qui satisfasse le backend. Pas de difference de MP ou ID sinon mais le backend n'enverra pas les rapports par exemple.
 
 **Ds Package.json, seulement si sous windows (pour Nabil) :**
 "start.port-fixed": "npm run start -- -p $npm_package_config_dev_port",
@@ -584,16 +584,16 @@ localhost ou 10.21.229.149 (adresse IP?)
             Icône rouge point d'exclamation = pas ok
 2- Toujours depuis Bitbucket :
     - bouton Merge
-3- ça envoie dans develop via jenkins qui build, vérifie et créé une nouvelle image
-    - scruter la branche develop, l'icone chrono indique le build en cours
+3- ça envoie dans develop via jenkins qui build, vérifie et crée une nouvelle image
+    - scruter la branche develop, l'icône chrono indique le build en cours
     - vérifier,
-    - update la branche dévelop
+    - update la branche develop
     - vérifier que le fix est bien présent dans le TDD develop
 4- assigner à Philippe Escoffier qui vérifie que ça fonctionne (2ème valid) (et il fait le reste si ça marche?)
     - assigner au PO
 
 
-## **Erreur: commit non souhaité :**  
+## **Erreur : commit non souhaité :**  
 
 un commit avec le workspace (les paths) de VSCode fait par erreur et avec un mauvais nom  
 Cédric m'a fait le retirer grâce à un ``git rebase interactif`` 
@@ -604,14 +604,14 @@ NB : Enregistrer le fichier de sauvegarde du workspace VSCode plus haut dans l'a
 
 Avant de faire rebase, pull etc, faire table rase des changements (changes) en cours (discard all changes ou autre)
 
-## **Erreur: rebase fait sur la branche develop locale pas à jour**
+## **Erreur : rebase fait sur la branche develop locale pas à jour**
 
 (clique sur le log pour savoir ce qui cloche en cas d'erreur ! )
 
 Rebase fait sur la branche develop locale au lieu de origin et il y avait eu un commit de quelqu'un depuis mon dernier pull sur de la branche develop,
 j'avais oublié de faire fetch --all, checkout develop, pull juste avant de revenir sur ma branche et de faire le rebase develop
 
-+ le pull en question devait être suivit d'un ```npm lint.fix``` et d'un ```npm i``` pour être à jour sur les paquets
++ le pull en question devait être suivi d'un ```npm lint.fix``` et d'un ```npm i``` pour être à jour sur les paquets
 
 Pour vérifier que notre rebase est fait sur une base saine :
 - dans bitbucket : vérif "commits"
@@ -646,8 +646,8 @@ Node.js installe npm avec Registry npm.global. C'est là (sur leur site) qu'on p
 
 Les éléments qu'on trouve dans les repositories du TDD sont de différents ordres : les librairies, les éléments : atome -> molécules -> organismes d'autre part (symbole sur TDD = 4 carrés), les Web components, les templates, les services, les storybooks **(à vérifier pour les derniers)**
 
-Un push, quel que soit la branche, génère un build jenkins  
-si pas branche master : (exemple :ALK Radio + nom de la branche + n°de la branche) le seul moyen de vérifier si on a la bonne image est d'aller voir le nom complet du build
+Un push, quelle que soit la branche, génère un build jenkins  
+si pas branche master : (exemple : ALK Radio + nom de la branche + n°de la branche) le seul moyen de vérifier si on a la bonne image est d'aller voir le nom complet du build
 
 console log: sur +sieurs app on génère un tag, savoir sur quel registry on veut récupérer l'image,
 **12:32:34 + docker push p 21d3220150001... fix/FNX-2649/missing-collapse** on trouve la bonne image et on vérifie le tag -> image utilisée dans edit env
@@ -662,7 +662,7 @@ Qd le build est testé et vérifié les builds sont stockés (ou devraient l'êt
 ## **Erreur 401** : OIDC
 **Erreur 401** souvent en rapport avec oidc.json :
 L'Authentification est déléguée au serveur Oidc.
-Si l'adresse a changé (ici de oidc-keycloick... à oidc-provider:8888), les username et mot de passe fonctionneront (< clone ?) mais le token fourni ne sera pas bon, donc pas reconnu par les services backend (comme les rapports), qui ne seront donc pas accessibles.
+Si l'adresse a changé (ici de oidc-keyclock... à oidc-provider:8888), les username et mot de passe fonctionneront (< clone ?) mais le token fourni ne sera pas bon, donc pas reconnu par les services backend (comme les rapports), qui ne seront donc pas accessibles.
 
 ### 28/10/22_Vendredi
 
@@ -672,7 +672,7 @@ on peut rebase sur une branche remote -> git rebase origin/develop
 ou en local sur notre branche mais avant on fait le git fetch --all et git pull ou git fetch origin develop:develop -> git rebase develop (préconisé par Thanh)
 
 ## Branche Bitbucket
-voir ma branche dans Bitbucket en rapport avec les autres branches : gris = commits en retard et bleu = commits d'avance
+Voir ma branche dans Bitbucket en rapport avec les autres branches : gris = commits en retard et bleu = commits d'avance
 branche fix/FNX-XXX/bidulchose :  ////|####
 
 Les convention de nommage pour la branche son dans :
@@ -704,7 +704,7 @@ subject = [component name, jira title, epic title]
 
 
 ### 2/11/22_Mercredi
-**Important**: Après un ```git commit --amend``` faire un ```git push -f```/push force, car on a réécrit l'historique
+**Important** : Après un ```git commit --amend``` faire un ```git push -f```/push force, car on a réécrit l'historique
 
 PB de version de l'extension Gitlens, qui était une version "preview" 18.0 :
 j'ai récupéré la version 13.0 qui est celle de Cédric, le fichier vsix, installé avec :  
@@ -732,8 +732,8 @@ Prototyping
 /* block comment */
 /** documentation */
 
-stencil.config.ts (don't commit): à la fin:
-SourceMap:true
+stencil.config.ts (don't commit): à la fin :
+SourceMap : true
 
 Voir QY : FNX-2680 ?
 
@@ -758,7 +758,7 @@ TODO : Ticket 2733 : écrire tests
 Le bug (vue sauvée avec tri absolu rechargée sans tri absolu -mais avec l'icône) est résolu en mettant l'appel à debounceCustomSorting ailleurs dans la fonction onGridInitialized.  
 En réponse à l'event : ```'modelUpdated'``` -> ```debounceCustomSorting``` est bien appelé -> ```initAbsoluteValueSorting``` a les arg pour entrer dans le ```if``` et indique la définition des colonnes.  
 En réponse à l'event : ```'AdaptableStateChanged'``` -> debounceCustomSorting : appelé ? oui/non -> ```initAbsoluteValueSorting``` : appelé ? oui/non, entre dans le if ? oui/non  
-Il semblait que la fonction initAbsoluteValueSorting était appelée trop tard mais je me demande s'il n'y a pas un problème avec :
+Il semblait que la fonction initAbsoluteValueSorting était appelée trop tard, mais je me demande s'il n'y a pas un problème avec :
 ```this.adaptableApi.eventApi.on('AdaptableStateChanged', (event: AdaptableStateChangedInfo): void => {```
 
 Etude du travail d'anciens dev sur les PR :
@@ -780,11 +780,11 @@ Etude du travail d'anciens dev sur les PR :
 - [ ] écrire tests 2733
 
 ## Tests 2733 :  
-la fonction à tester est ```onGridInitialized``` : il faux savoir si elle appelle bien ```initAbsoluteValueSorting``` avec les bonnes infos. (test d'intégration?)
+La fonction à tester est ```onGridInitialized``` : il faut savoir si elle appelle bien ```initAbsoluteValueSorting``` avec les bonnes infos. (test d'intégration?)
 
-Existe-t-il une similation (mock) de l'initialisation d'une page ?
+Existe-t-il une simulation (mock) de l'initialisation d'une page ?
 NB : ajouter une pseudo colonne avec des montants comme valeurs qui peut indiquer si c'est trié ou pas par valeur absolue?
-Sujet lié :- qu'a fait Amira pour éviter les appels aux backend pour les rapports? - comprendre tests FNX ajoutés récemment (Thanh, Philippe C., Diego?) et anciens (Guillaume Felix, Nicolas Merinian)
+Sujet lié :- qu'a fait Amira pour éviter les appels aux backend pour les rapports ? - comprendre tests FNX ajoutés récemment (Thanh, Philippe C., Diego?) et anciens (Guillaume Felix, Nicolas Merinian)
 
 elm = peg-table = peg-table
 
@@ -960,9 +960,6 @@ Tant mieux, je suis au même endroit demain.(edit 22/11 : sans surprise, être p
     - partager la PR, suivre les commentaires et corriger jusqu'à validation
     - faire tester par PO
     - merge puis suivre tests QA
-
-
-
 
 **Ticket 2731 :**
 [X] me l'attribuer
