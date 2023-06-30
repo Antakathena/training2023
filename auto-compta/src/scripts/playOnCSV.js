@@ -102,7 +102,7 @@ console.log('operationsObj:', operationsObj);
 
 /* const dynamicTable = document.getElementById('dynamicTable');
 const btn = document.getElementById('dynamicTableButton'); */
-const myheaders = ['date', 'montant', 'moyen', 'tiers', 'date de l\'opération', 'numéro de chèque', 'catégorie'];
+const myheaders = [ 'date', 'montant', 'moyen', 'tiers', 'date de l\'opération', 'numéro de chèque', 'catégorie' ];
 
 const functionCreateTable = function createTable (headersArray, operationsObject) {
     console.log('coucou from function createTable');
