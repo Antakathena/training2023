@@ -1231,7 +1231,7 @@ Retrait des commits avec un reset soft (ce qui garde les modifs que l'on peut al
 Le refacto de Diego a créé des problèmes à QN déjà car sur Pegasus il a upgradé Stencil, donc il lui faudrait upgrader node pour que ça marche ? Finalement pour ma machine, ça n'est pas ça qui bloquait mais un import dans le fichier storybook créé automatiquement lors de la création du component fnx-open-setup-button. En supprimant l'import, ça passe.
 
 ## Gérer un rebase difficile
-Pour les conflicts, vérifier si necessaire l'état de develop sur bitbucket pour comparer avec les modifications que l'on veut faire.
+Pour les conflicts, vérifier si nécessaire l'état de develop sur bitbucket pour comparer avec les modifications que l'on veut faire.
 
 On peut revenir sur les commits fait avec les outils de VSCode pour rebase avant d'ajouter ses modifs.
 
@@ -1263,7 +1263,7 @@ https://cdiese.fr/syntaxe-typescript-en-10-min/
 Avec Thanh, mock data tool: 
 nb il a fallu rajouter l'import de writefile dans les templates/generators/replay-data.js de pegasus, report-manager et launcher
 et nous avons ajouté le service de mock dans le plop de fx-trade-contribution
-ça marche pour les rapports de pegasus et report-manager mais pas pour trade-contribution à cause des real-time updates/SSE/quieries (je ne me souviens plus de la formulation exacte employée par Thanh)
+ça marche pour les rapports de pegasus et report-manager, mais pas pour trade-contribution à cause des real-time updates/SSE/queries (je ne me souviens plus de la formulation exacte employée par Thanh)
 
 Pour se service du mock data service, lire la doc;
 En résumé :
@@ -1278,11 +1278,11 @@ ensuite on passe à plop replay
 on ne joue le script qu'une fois depuis launcher (ça lance tous les proxay necessaires)
 pour arrêter : ctrl+c et npx proxay kill (ou commande corrigée)
 
-Avec Cédric, 2885:
+Avec Cédric, FNX-2885:
 L'idée est d'ajouter l'info du action label name à ce qui passe de pegasus à trade-contrib.
 Solution simple adoptée pour éviter d'avoir à releaser une nouvelle version de alk... vers lequel data-reporting (ou je ne sais plus quoi) a été déplacé par le refacto de Diego.
 
-Toujours bien vérifier que ça build avant les test pour être alerté si erreur à ce niveau là.
+Toujours bien vérifier que ça build avant les tests pour être alerté si erreur à ce niveau-là.
 
 (edit après 3 jours off, pas d'environnements dispo pour l'instant
 le Soir : un truc clochait mais je ne sais plus quoi. A retester (+ push ?) dès que possible)
@@ -1299,7 +1299,7 @@ Taux de Ferritine à 5 ng, apparemment c'est bien bien bas
 
 [X] Appel à la notaire à Lyon
 
-14h Functionnal Grooming :
+14h Functional Grooming :
 **cloud margin** : UI to be able to use standalone apps from our parteners -> specific url to add
 "collateral management app" ?
 licence check would be part of the user rights < to be checked by back-end ?
@@ -1338,5 +1338,5 @@ Priorités :
 [ ] cours pluralsight JS fundamentals et retake test JS
 
 [ ] save notes JdB
-[ ] ckeck usage cloud et sauvegardes en cas de crash PC ou Vbox
+[ ] check usage cloud et sauvegardes en cas de crash PC ou Vbox
 

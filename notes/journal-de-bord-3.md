@@ -23,10 +23,10 @@ pas de voyage, veut profiter de sa carte disney avant la fin.
 
 ### 06/05/23_Vendredi
 
-2885 Modifs faites , rebase etc mais j'attend que develop marche pour tester dans mon instance TDD (j'ai un doute sur le fonctionnement du drilldown mais je crois que ça ne vient pas de mon code mais je n'ai eu le soucis que 2 fois les env du TDD contre souvent en local)
+2885 Modifs faites, rebase etc, mais j'attends que develop marche pour tester dans mon instance TDD (j'ai un doute sur le fonctionnement du drilldown mais je crois que ça ne vient pas de mon code mais je n'ai eu le soucis que 2 fois les env du TDD contre souvent en local)
 
-Backend (comment il s'appelle ? pas grand, fin, brun un peu dégarni, souvent là, il a l'air sévère et très efficace ) m'a demandé qui s'occupait du feature Cloud Margin et qui pour le PB du SSE qui faisait débloquer les rapports de Pegasus quand on revenait dessus après avoir ouvert un drilldown (il y a un ticket là dessus)
-Lenteur QAFun d'après lui c'est un pb d'infrastructure... Ce serait interressant à savoir.
+Backend (comment il s'appelle ? pas grand, fin, brun un peu dégarni, souvent là, il a l'air sévère et très efficace : Julien ) m'a demandé qui s'occupait du feature Cloud Margin et qui pour le PB du SSE qui faisait débloquer les rapports de Pegasus quand on revenait dessus après avoir ouvert un drilldown (il y a un ticket là dessus)
+Lenteur QAFun d'après lui c'est un pb d'infrastructure... Ce serait intéressant à savoir.
 Chercher un ticket en rapport avec le dev ops ?
 
 ## Pour migrer un env déployé sur l'env de develop sur le TDD vers rancherQA :

@@ -580,7 +580,7 @@ Ccy = currency
 réassigné au rapporteur après vérification sur Rancher QA et QA Fun (pas de rapports du rancher Dev)
 il semble que les fields manquant dans le ticket ne le soient plus
 
-**réu résilience etc**
+**réu résilience etc (cf recording)**
 idées lectures :
 Deep work, The Power of When, Atomic Habits
 idée : prendre le soleil en début de journée pour réinitialiser l'horloge biologique
@@ -604,6 +604,117 @@ reporting ressource service
 reports-list-to-display.service.ts
 **getReportsConfigs()** -> Breakpoint
 
-Le serveur n'a pas l'air de gérer deux appels en parallèle. Donc ne faire qsu'un appel?
+Le serveur n'a pas l'air de gérer deux appels en parallèle. Donc ne faire qu'un appel?
+
+Jeudi soir, identifié 5 appels avec Thanh, un elt à la fois, c'est appelé par quoi et tracer une fonction + placer ses consoiles log toujours au même endroit
+### 01/07/23_Vendredi
+maison
+
+call avec Amira l'aprèm pour demander aide sur 3333
+
+### 03/07/23_Lundi
+bureau
+
+Bureau 5561 à côté de Saurav, Nabil à sa place habituelle
+Reu d'info de Thanh pour upgrade Node 18
+Réu de Saurav avec Adrian et Dragos sur impl et config de la nouvelle app BOHQ + roles (types d'app en vrai, les roles c'est backend ...?)
+FNX-3333 : on finira demain avec AMira (la pauvre se retrouve à se coltiner un coup de main pour les appels après le end of day call mais bon, je pense que la régression vient de son rename alors...)
+
+    private async updateListReports(): Promise<void> {
+        console.log('%cupdateListReports', 'background: #212121; color: #d63333');
+        this.reportList = await this.reportListingService.getList();
+
+### 04/07/23_Mardi
+bureau
+
+travail avec Amira sur FNX-3333 pour optimiser le nombre d'appels pour récupérer la liste des rapports quand on en a besoin dans le RM
+
+NB : on a une erreur qui n'a rien à voir, un truc passé dans une autre PR qui n'aurait pas dû buildé. Correction temporaire ajoutée par Amira:
+Dans reporting-ressource.interface.ts
+export interface IReportResource
+    category: string;
+    reportName: string;
+    reportLabel?: string;
+    ...
+NE PAS COMMITER CA !
+
+### 05/07/23_Mercredi
+maison
+
+quelques modifs à faire suite au changement de logique en faveur d'events au lieu d'un channel : surtout, j'avais omis de retirer des éléments devenus inutiles
+corrigé le matin
+
+après-midi, discussions avec Nabil en début d'après-midi, puis Philippe en fin d'après-midi autour du même sujet (mais je n'avais pas bien compris avec Nabil):
+l'un de mes tests devait être simplifié et mieux pensé pour être plus utile. J'avais essayé de le faire comme ça suite au call avec Nabil mais il échouait.
+J'ai cru que c'était normal à cause d'une erreur de logique de ma part mais c'est juste que le mock de l'event manquait de détails (il doit être exactement comme dans le code ou en tout cas avoir les elts qui servent au test. On passe ce qu'on veut à un event, comme ça c'est envoyé avec, donc si, comme ici, l'event est accompagné du report, on doit mocker le report pour le test quand on mock l'event)
+
+### 06/07/23_Jeudi
+maison le matin
+bureau aprèm
+
+matin :
+clôt le ticket où Denisa a dit que les champs étaient bien présents maintenant -> non reproductible
+Cédric m'a montré comment clore et dit que pour le FNX-3333 pour le passer en status "build", il faudrait passer par ask for review puis reviewed car pour les defect high, c'est obligatoire. Pour les low on peut passer directement à build.
+En fait, les actions possibles sont visibles grâces aux boutons gris en haut. Si un statut visé n'est pas là, c'est qu'il faut passer par des étapes intermédiaires;
+
+Suivi, hors temps du daily, de la réunion sur la productivité et la résilience.
+Je suis archi fatiguée. De ce que j'ai écouté ce matin comme podcasts
+
+passage chez le tailleur, qui pourrait par exemple faire une copie de la robe courte classique manches 3/4 col bateau fermeture dans le dos pour 180€
+
+FNX-3333
+Suite remarque Diego check sur Openfin
+ça ne marche pas, a priori d'ailleurs toutes les communications entre la partie droite et gauche qui sont gérées par des events avec target: body ou document passent bien dans le browser mais pas dans Openfin
+
+M'enfin, ce qui me console, c'est que les autres dev ont chacun leurs soucis avec des trucs qui ne marchent pas.
+Par exemple, Cédric ne peut pas release frx (je crois) car une petite modif a été faite et que là ça ne build plus...
 
 
+To Do:
+FNX-3333
+[ ] create new branch based on develop to roll-back to channel logic instead of event
+[ ] clean events present before the ticket and find another way
+[ ] delete, save new report without rename, save new report with rename, save existing report new name (book marked or not, ideally) should work in browser and openfin, as fast as possible
+
+### 07/07/23_Vendredi
+
+PR Thanh : que fait l'ajout du point d'exclamation dans alk-button.tsx ?   
+@Event() alkDisableChange: EventEmitter<boolean>;
+@Event() alkDisableChange!: EventEmitter<boolean>;
+
+
+### notes manquantes : fouiller les cachiers,il est temps de prendre des vacances
+
+### 26/07/23_Mercredi
+*Home office*
+*De retour après 10 jours de repos*
+[ ] En finir avec FNX-3335 :
+- Branche rebasée
+- check avec Philippe suite à son commentaire pour voir si on pouvait se passer de flex :
+- en supprimant le "max-width" de "node-label", le texte du label s'adapte et le flex nécessaire dans le cas d'icônes qui s'ajoutent est pris en charge pas le alk-list component, donc c'est bon.
+- passage à la colonne ready for PO après la manip pour changer le statut, car defect "high", donc il fallait passer par les statut "request for review" et "review done"
+- passé d'Eugène à Philippe E à Magda qui était le reporter du defect.
+
+[ ] revue des e-mails :
+-nb : Finastra Workplaces, nouvelle app pour réserver un bureau (il faut confirmer en arrivant le matin, dans le mail)
+Ajoutée aussi aux favoris. <https://finastraworkplaces.ffm.hqo.com/building/45b7e36a-2260-4d3c-b731-6a4d4bef2a22>
++ j'ai ajouté les "close colleagues" mais pas sûre qu'ils réservent leur place ou se mettent en "public".
+
+[ ] revue des PRs :
+- SFX-6657 : QN a créé un décorateur pour SFX, il faudra y revenir pour comprendre les imports, notamment createElementFromTemplate de alk-grid utils
+- Remarques de Thanh sur PR Diego à retenir :
+  - don't need to destructure to a create a new array is already a new array when you use Object.values
+  - avoid @ts-ignore comment prefer to use // @ts-expect-error:description of the error
+- PR pour Node Upgrade de Adrian, question au passage : qu'est-ce que les peerDependencies dans le package.json et pourquoi des versions qui finissent par .x?
+- C'est quoi, export default meta , l.19 de alk-app-icon.stories.ts par exemple ds PR Chore/FNX-3438/upgrade node
+- Nb: PR Chore/FNX-3499/node upgrade rigolote (upgrade template generator, y revenir)
+- 
+End-of-day call :
+ Thanh sur Migration glue42, en vient à faire du React
+ Nabil a releasé plusieurs components...(migré vers Node ?)+ travail en lien avec le SSE.
+(il m'a demandé dans la journée si je savais comment tester le SSE mais je me souviens juste avoir eu des soucis avec Trade Contrib et avoir essayé de l'éviter, notamment avec Local Position il me semble)
+ Amira a mergé sans rebaser et du coup Thanh lui a dit que ça arrivait et nous a montré son graph en ligne de commande pour voir l'arbre en couleur.
+Il a mentionné des erreurs de Saurav (que j'ai pu constater, des erreurs à moi 
+(mais je n'en ai pas vu dans l'arbre qu'il nous a montré),
+nous avons vu des écarts de Cédric mais c'est peut-être particulier et les Pyramides de Diego,
+qui préfère se rebaser sur ses propres modifs si j'ai bien compris avant de merger)
