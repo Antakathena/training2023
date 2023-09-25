@@ -686,8 +686,10 @@ PR Thanh : que fait l'ajout du point d'exclamation dans alk-button.tsx ?
 ### notes manquantes : fouiller les cachiers,il est temps de prendre des vacances
 
 ### 26/07/23_Mercredi
+
 *Home office*
 *De retour après 10 jours de repos*
+
 [ ] En finir avec FNX-3335 :
 - Branche rebasée
 - check avec Philippe suite à son commentaire pour voir si on pouvait se passer de flex :
@@ -709,12 +711,316 @@ Ajoutée aussi aux favoris. <https://finastraworkplaces.ffm.hqo.com/building/45b
 - C'est quoi, export default meta , l.19 de alk-app-icon.stories.ts par exemple ds PR Chore/FNX-3438/upgrade node
 - Nb: PR Chore/FNX-3499/node upgrade rigolote (upgrade template generator, y revenir)
 - 
-End-of-day call :
- Thanh sur Migration glue42, en vient à faire du React
- Nabil a releasé plusieurs components...(migré vers Node ?)+ travail en lien avec le SSE.
-(il m'a demandé dans la journée si je savais comment tester le SSE mais je me souviens juste avoir eu des soucis avec Trade Contrib et avoir essayé de l'éviter, notamment avec Local Position il me semble)
- Amira a mergé sans rebaser et du coup Thanh lui a dit que ça arrivait et nous a montré son graph en ligne de commande pour voir l'arbre en couleur.
-Il a mentionné des erreurs de Saurav (que j'ai pu constater, des erreurs à moi 
-(mais je n'en ai pas vu dans l'arbre qu'il nous a montré),
-nous avons vu des écarts de Cédric mais c'est peut-être particulier et les Pyramides de Diego,
-qui préfère se rebaser sur ses propres modifs si j'ai bien compris avant de merger)
+End-of-day call :  
+- Thanh sur Migration glue42, en vient à faire du React  
+- Nabil a releasé plusieurs components...(migré vers Node ?)+ travail en lien avec le SSE.  
+(il m'a demandé dans la journée si je savais comment tester le SSE mais je me souviens juste avoir eu des soucis avec Trade Contrib et avoir essayé de l'éviter, notamment avec Local Position il me semble)  
+- Amira a mergé sans rebaser et du coup Thanh lui a dit que ça arrivait et nous a montré son graph en ligne de commande pour voir l'arbre en couleur.
+    Il a mentionné des erreurs de Saurav (que j'ai pu constater, des erreurs à moi   
+    (mais je n'en ai pas vu dans l'arbre qu'il nous a montré),
+    nous avons vu des écarts de Cédric mais c'est peut-être particulier et les Pyramides de Diego,  
+    qui préfère se rebaser sur ses propres modifs si j'ai bien compris avant de merger)  
+
+### 27/07/23_Jeudi
+
+*Washington Plaza*
+*QN, Cédric, Saurav au bureau, Eugene aussi mais de l'autre côté et on ne s'est pas croisés*
+
+Daily Scrum :
+Me : 3335 assigned to Magda, so I'm ticketless. I can take part in the Node migration
+
+In the morning, I took ticket for upgrade to Node 18 alk-time but Thanh was already on it,
+so in the afternoon, I took alk/service-explorer but it's a molecule component, it depends on alk/list-menu (which has a peer dependency on design-system 4.x), the package.json is done, need to update channel hub and alk/list menu to new version when they are available, so that everyone depends on alk/design-system 6.0.0
+so I will change the .storybook folder, which is obsolete and with totally different files than the other repos for now and then move to upgrating alk/channel-hub.
+
+Donc demain :
+    Actualiser d'après le modèle de PR de Thanh le .storybook de alk/service-explorer
+    Puis passer à alk/Channel-Hub
+    Et peut-être à alk/list-menu ensuite.
+
+    Voir aussi :
+    TODO : Check PR Amira , who merged FNX-3333, Demander à QN des explications sur son décorateur pour SFX-6657
+
+
+Le launch.json de VSCode pour debugger les tests a changé, on ajoute et remplace un element avec "--", "${fileBasename}",
+c'est pour ça qu'on arrivait plus à lancer les tests sur un seul fichier avec le debug,
+source : <https://stenciljs.com/docs/testing-overview>
+et ça donne ça :
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Spec Test Current File",
+            "cwd": "${workspaceFolder}",
+            "program": "${workspaceFolder}/node_modules/.bin/stencil",
+            "args": ["test", "--spec", "--", "${fileBasename}", "--no-coverage", "-u"],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+        }
+    ]
+}
+
+
+### 28/07/23_Vendredi
+
+*Washington Plaza*
+*seulement Frank, Guy and Ogden au bureau, dej à la cantine avec Guy*
+
+Matin :
+Diego a fait channel hub apparemment, d'après la liste de composants mis à jour qu'il a mis sur slack dans un cannal #node18
+Il n'a pas vu/lu mon mail de suivi d'hier semble-t-il
+Bah, je n'avais pas commencé. Mais ça m'agace un peu parce que Thanh m'a reproché de ne pas avoir respecté l'assignation
+du ticket hier et là, c'est Diego qui n'a pas prêté attention alors que j'avais bien fait l'assignation et bien que j'ai pris la peine de lui envoyer un mail. C'est pô juste.
+
+Documentation pour la migration Node à un format lisible, Adrian l'a trouvé dans documentation/source
+1er folder dans la liste : documentation/adr/storybook_migration.md -> clic sur "see migration doc"
+https://scm-git-eur.misys.global.ad/projects/FNX/repos/documentation/browse/migration/node_18.md?at=refs%2Fheads%2Fchore%2FFNX-2286
+
+**NB : le npm i installe en rapport avec la version de nvm/node qui est sur le terminal actif. Donc si on change de node, on a d'autres version.?a vérifier exactement?**
+
+Aprèm : travail sur Alk-list-menu:
+Soucis avec le linting (il fallait juste simplifier eslintrc, merci Adrian)
+Soucis avec les .stories.ts à adapter aux nouvelles versions. Plus galère. Diego me renvoie à la doc de Thanh mais je ne vois pas de détails là dessus.
+
+### 31/07/23_Lundi
+
+*Home office*
+PRs lues à part les 3 pour Pivot Mode par Cédric, besoin d'un esprit plus clair ou d'explications.
+FNX-3436 Alk-service-Explorer : fini de préparer la migration de storybook etc en attendant d'avoir Channel Hub et Alk-list-menu dispos.
+FNX-3456 Alk-lis-menu migration : migration des storiess de alk-list-menu. Aide de Diego + tips de Thanh au end od day call
+Cours pluralsight (dernier jour pour avoir 4h en juillet) : cours storybook + data structure (C+)
+
+// prepareListeners([ $elementWithDetail, $elementWithNoDetail ]);
+// on remplace en rajoutant l'appel à addButton à la fin des bouts de doms et et addlistener avec la liste des boutons
+
+Bizarrement, le hover de alk-list menu réagit seulement avec les arrows keys, pas le hover de la souri :
+@Watch('hoveredIndex')
+onHoveredIndexChanged(value: number): Promise<void> {
+console.log('onHoveredIndexChanged', value);
+this.alHoverChange.emit({ value });
+scrollToHovered(this.$list);
+if (Boolean(this.$listMenuOverlay)) {
+this.$listMenuOverlay.hoveredIndex = this.hoveredIndex;
+}
+return;
+}
+
+const addListeners = ($root: DocumentFragment, $elements: Array<HTMLAlkListMenuElement>, args: AlkListMenuArgs,
+targetAlkValue: IAlkListMenuOption) => { 
++
+// addAlkValueChange listener (pas toutes identiques et demandent trop de parametres et le code serait pas plus clair)
+
+el.addEventListener('alkValueChange', (event: CustomEvent) => {
+args.alkValueChange(event.detail);
+el.value = event.detail.value;
+targetAlkValue = el.value;
+});
+
+### 2/08/23_Mardi
+
+*washington plaza*
+PRs : 
+-> A quoi sert le fichier graphql.interface.ts ?
+    REST contenu envoyé défini par l'url fetchée vs GRAPHQL schema:
+    contenu (< 1 seule url) définie par la query -> besoin d'un contrat défini par les interfaces.
+    plugins traduisent le schema en interfaces = les verbes etc. qu'on a le droit d'utiliser dans les queries.
+-> rollup.config.js -> lecture pour savoir ce que c'est (en gros)
+-> commit message pour la migration Node :
+    ajouter Breaking Change + quitte à faire un breaking change, on peut corriger les erreurs de naming convention comme enum à la fin au lieu de E au début d'une enum.
+    attention, ça fera changer les choses dans les app qui utilisent la lib/le composant.
+
+Suite grooming :
+    pour Summit on ne veut pas donner accès aux services Kondor. Solution trouvée par Diego pour que ça passe : indiquer unavailable dans le .env
+    Il faudrait trouver un systeme pour que à partir d'une variable d'environnement ( et d'un fichier avec le détail) le apps.json soit construit dynamiquement en fonction des services à rendre disponibles?
+    Un script pourrait faire ça. Thanh se demande si on ne peut pas le faire via Node car majorité des dev de l'équipe maîtrisent mieux que Shell.
+    Autre proposition : utiliser Docker Proxy ?
+    Les clients Summmit passent par Docker-compose et pas par Kubernetes.
+    Quelle liste de service fait foi ? D'où sort-elle ? Il ne faut qu'une source de vérité.
+
+### 3/08/23_Mercredi
+
+*washington plaza*
+
+Act on comments pour alk-list-menu : factorisation du code pour créer une méthode addValueChangeListeners, ajout import de css de alk-overlay via dist (mais je ne comprends pas comment le css de overlay se retrouve dedans et je n'ai rien vu de différent)
+Modification de alk-list-menu pour ajouter les "actions", messages comme des console.log mais spécifiques à storybook.
+
+### 4/08/23_Jeudi
+
+*washington plaza*
+
+Dernières erreurs au build corrigées sur service-explorer les unes après les autres.
+
+Battle pour faire marcher le storybook. 
+Comme ça n'est pas sur le TDD mais un cas à part, sur les conseils de Thanh, je suis revenue sur develop après avoir stashé mes modifs pour vérifier ce que ça faisait à l'origine et vérifier le résultat à avoir sur le storybook.
+Ca marchait enfin en fin de journée, plus d'erreurs affichées. Mais : le build ne passait pas, et en vérifiant les branches j'ai vu que c'est peut-être dévelop qui n'est pas bon à la base. Je me suis rebasée dessus mais develop est en retard de 2 commits et il y a une autre branche.
+
+### 5/08/23_Vendredi
+
+*Off*
+
+### 7/08/23_Lundi
+
+*home office*
+
+Remarques de Philippe: sur Alk-list-menu le bouton focus ne fait pas ce qu'il devrait et il y a des différences entre le visuel de mon composant et le TDD.
+
+Matin :
+- Focus : le problème existe aussi sur les autres composants, Philippe va continuer à chercher une bonne solution de son côté
+- visuel différent : après enquête avec Saurav et Philippe, ça vient d'une alk-list-menu {width:156px} héritée de alk-multi-component-list sur le TDD, donc de mon côté c'est bon.
+  ( Philippe m'a expliqué que l'erreur est plutôt dans alk-multi-component-list qui ne devrait pas imposer sa taille aux autres composants,)
+- je peux eventuellement ajouter une width:156px à mon alk-list-menu.scss pour m'assurer que le composant reste comme ça en cas de changement mais je ne sais pas si je dois.)
+
+PR : à jour, les 4 pas validées le sont parce que je rebase à faire, je veux suivre ou que je ne suis pas au clair avec tout
+
+e-mail : rien de spécial mais formation IA à faire sur Workday.
+
+Aprèm : formation IA, SASS, nouveau composants? Alk-list-view ?
+
+
+### 10/08/23_Jeudi
+*bureau*
+
+alk-list-menu.tsx, l.242:
+private readonly itemsRender
+            // probleme avec key : cf https://legacy.reactjs.org/warnings/special-props.html
+            // et https://stackoverflow.com/questions/42261505/getting-error-message-li-key-is-not-a-prop
+            // https://stackoverflow.com/questions/66076170/why-do-i-get-key-is-not-a-prop-in-react
+NB : dans le renderer on appelle l. 373 :
+    itemsRender={ this.itemsRender } // pb ici ?
+    Et alk-list-menu est appelé dans le renderer de alk-list-view et on lui passe value={ this._selectedOption }
+
+alk-list-menu.tsx, l.289
+    private readonly getDirtyLabel = (option: IAlkListMenuOption, isPristine: boolean, dirtyLabel: string) => {
+        const choice = isPristine ? '' : ` ${ dirtyLabel }`;
+        return `${ option.label }${ choice }`;
+    };
+        //`${ option.label }${ isPristine ? '' : ` ${ dirtyLabel }` }`; donnait lieu à erreur sur nested template literal (sonarjs)
+
+    
+    render(): JSX.Element {
+        const _event = this.handleActionClick(this._selectedOption);
+        const isTooltipDeactivated = this.isDisabled || !Boolean(this._selectedOption?.label || this.defaultViewLabel);
+        console.log('RENDER');
+        console.log('selectedOption', this._selectedOption);
+        console.log('selectedOption?.label', this._selectedOption?.label);
+        console.log('defaultViewLabel', this.defaultViewLabel);
+
+    describe('initial view', () => {
+        xit('Should be an instance of alkListView.', () => {
+            console.log($elm);
+            expect($elm).not.toBeInstanceOf(AlkListView); // mais pourquoi?
+            const myInstanceofAlkListView = new AlkListView;
+            console.log(myInstanceofAlkListView);
+            expect($elm).not.toBeInstanceOf(AlkListView);
+        });
+
+        describe('initial view', () => {
+        xit('Should be an instance of alkListViewMenu.', () => {
+            console.log('-------------------$elm', $elm);
+            expect($elm).not.toBeInstanceOf(AlkListViewMenu);
+            const myInstanceofAlkListViewMenu = new AlkListViewMenu;
+            console.log('-----------myInstanceofAlkListViewMenu', myInstanceofAlkListViewMenu);
+            expect(myInstanceofAlkListViewMenu).toBeInstanceOf(AlkListViewMenu);
+            const alsoAnInstanceofMyComponent = page.rootInstance;
+            console.log('alsoAnInstanceofMyComponent', alsoAnInstanceofMyComponent);
+            expect(alsoAnInstanceofMyComponent).toBeInstanceOf(AlkListViewMenu);
+            // expect(page.body).toEqualHtml('');
+        });
+
+
+Un essai pour récupérer le contenu interessant dans un snapshot mais finalement on a utilisé la dernière option pour voir si le toggleEvent 
+était bien fait sur le bon élément :
+
+                        it('click on favorite, renders ok', async () => {
+                    const renderItem = render(1, 1, innerMethods)(defaultListOption[ 1 ], 2);
+                    const favoriteBtn = renderItem[ '$children$' ][ 0 ][ '$children$' ][ 2 ][ '$children$' ][ 0 ];
+                    favoriteBtn[ '$attrs$' ].onClick();
+                    await page.waitForChanges();
+                    const $span = page.root.shadowRoot.querySelector('alk-tooltip').querySelector('span');
+                    const innerText = $span.childNodes[ 0 ].nodeValue;
+                    expect(innerText).toContain('label 2');
+                    expect($elm).toMatchSnapshot();
+                });
+                /*                 + <alk-list-view>
+                +   <mock:shadow-root>
+                +     <p class="label">
+                +       View:
+                +     </p>
+                +     <alk-tooltip class="alk-tooltip-stretch" position="default">
+                +       <alk-list-view-menu class="is-dirty">
+                +         <alk-list-menu class="menu-with-detail" fill="clear" iskeepopenonselection="" tabindex="0"></alk-list-menu>
+                +       </alk-list-view-menu>
+                +       <span slot="tooltip">
+                +         label 2
+                +       </span>
+                +     </alk-tooltip>
+                +   </mock:shadow-root>
+                + </alk-list-view> */
+
+                    it('click on favorite, trigger event from the list menu', async () => {
+                    const renderItem = render(1, 1, innerMethods)(defaultListOption[ 1 ], 2);
+                    const favoriteBtn = renderItem[ '$children$' ][ 0 ][ '$children$' ][ 2 ][ '$children$' ][ 0 ];
+                    expect(toggleEventMock).not.toBeCalled();
+                    favoriteBtn[ '$attrs$' ].onClick();
+                    await page.waitForChanges();
+                    expect(toggleEventMock).toBeCalledWith(expect.objectContaining({
+                        'detail': { 'actionMethod': 'toggle-favorite', 'event': undefined, 'payload': { 'id': '2', 'label': 'label 2' } },
+                    }));
+                });
+
+Bien retenir le jest.expect.object containing
+Thanh m'a fait chercher jest expect tobeCalledWith partial contain
+pour trouver sur google
+
+
+    describe('checkNewName', () => {
+        xit('should setCustomValidator', async () => {
+            const $input = page.root.shadowRoot.querySelector('alk-input');
+            $input.value = 'new Input';
+            await page.waitForChanges();
+
+            const setCustomValidatorMock = jest.fn();
+            page.rootInstance.$alkInput.setCustomValidator = setCustomValidatorMock;
+            const alkListViewMenu = page.rootInstance;
+
+            await page.waitForChanges();
+            alkListViewMenu.checkNewName();
+            await page.waitForChanges();
+
+            expect(setCustomValidatorMock).toBeCalled();
+
+        });
+    //expect(page.root).toEqualHtml('Not that but at least it will show me what is');
+    });
+
+
+
+    xit('displays correct numbers of options using itemsRender', async () => {
+        const alkListViewMenu = page.rootInstance;
+        const innerMethods: IAlkListMenuInnerMethods = {
+            onItemSelected: () => null,
+        };
+        alkListViewMenu.itemsRender(1, 1, innerMethods)(defaultListOption[ 1 ], 2);
+        await page.waitForChanges();
+        const listMenuItems = $elm.querySelectorAll('.list-menu-item');
+        console.log('STOP THE MACHINE', listMenuItems);
+        expect(listMenuItems.length).toBe(defaultListOption.length);
+    });
+
+            xit('Should be an instance of alkListViewMenu.', () => {
+            console.log('-------------------$elm', $elm);
+            expect($elm).not.toBeInstanceOf(AlkListViewMenu);
+            const myInstanceofAlkListViewMenu = new AlkListViewMenu;
+            console.log('-----------myInstanceofAlkListViewMenu', myInstanceofAlkListViewMenu);
+            expect(myInstanceofAlkListViewMenu).toBeInstanceOf(AlkListViewMenu);
+            const alsoAnInstanceofMyComponent = page.rootInstance;
+            console.log('alsoAnInstanceofMyComponent', alsoAnInstanceofMyComponent);
+            expect(alsoAnInstanceofMyComponent).toBeInstanceOf(AlkListViewMenu);
+            // expect(page.body).toEqualHtml('');
+        });
+    });
