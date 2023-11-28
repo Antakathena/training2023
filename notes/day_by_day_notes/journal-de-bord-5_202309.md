@@ -580,7 +580,7 @@ petites recherches sur OS, Kernel, etc.
 
 ### 22/09/23_Vendredi
 *home office*
-* olivier prepa salon PME*
+*olivier prepa salon PME*
 
 Magda m'avertit le matin que env tjs pas dispo
 
@@ -591,3 +591,318 @@ and Adaptable version to 15.4.3" (ticket 3360), notamment :
  `"@ag-grid-enterprise/charts": {
             "version": "29.3.5", etc...`
 Il me dit que c'est parce que pegasus utilise @alk/ag-grid qui contient ag-grid-enterprise
+
+### 25/09/23_Lundi
+*off*
+*accompagné Olivier au salon des TPE/SME*
+
+### 26/09/23_Mardi
+
+#### Ticket FNX-3635 : chart-tooltip-unavailable - suite
+Pour comprendre ce qui cloche dans le code au sujet des tooltips, Diego me suggère d'implémenter des charts avec des tooltips qui fonctionnent.
+Partant de l'exmple de base de ag-grid "getting started", j'essaie de créer des charts et une grid de scratch.
+
+PB de certificates :
+Dans un nouveau repo comme dans Pegasus ou sophie-training, 2 erreurs en console :
+export NODE_TLS_REJECT_UNAUTHORIZED=1
+
+sinon:
+https://stackoverflow.com/questions/29283040/how-to-add-custom-certificate-authority-ca-to-nodejs/47160447#47160447
+cf answer 2 :
+You can specify a command line option to tell node to use the system CA store:
+`node --use-openssl-ca`
+Alternatively this can be specified as an environment variable, if you are not running the node CLI directly yourself:
+`NODE_OPTIONS=--use-openssl-ca`
+and comments
+
+Après-midi :
+comme conseillé à midi par Diego j'essaie de créer les charts dans un nouveau PWA stencil mais j'enchaîne les soucis de config, d'environnement...
+A la fin de journée, j'ai un PWA qui foncitonne mais les même erreurs en console pour ag-grid que dans vanillaJS.
+
+### 27/09/23_Mercredi
+Matin :
+J'ai réussi à corriger la façon d'importer et d'implémenter ag-grid dans vanilla JS (mais en laissant tout dans le HTML plutôt qu'en rangeant bien dans des fichiers le JS et le CSS)
+Mais comme on travaille sur un PWA avec Pégasus, mieux vaut arranger le PWA modèle de base ("training-PWA") pour plus de fidélité au projet.
+Après-midi :
+Les charts fonctionnent sur le PWA, tooltips out of the box aussi mais je ne peux pas résister à corriger ma grid qui n'est pas correcte.
+J'ai aussi essayé de retirer des éléments dans Pegasus mais les tooltips ne reviennent pas pour autant (le theme custom notamment)
+Le soir : J'ai un PWA et une page avec VanillaJS, et les 2 ont des tooltips.
+Bug pas corrigé, par contre
+
+### 28/09/23_Jeudi
+Comme indiqué par Diego le matin, j'applique petit à petit la config des charts de Pégasus à mon PWA mais en fin de journée, les tooltips n'ont toujours pas cassé.
+En tout cas, ça n'est pas lié aux gridOptions ou aux ChartsOptions.
+
+### 29/09/23_Vendredi
+Ca ne casse pas en étant dans le module/la page créée automatiquement avec la création du PWA, donc je veux faire un component séparé à importer dans la page, comme dans Pégasus.
+
+### 2/10/23_Lundi
+Off. AU salon des TPE/PME avec Olivier
+
+### 3/10/23_Mardi
+Demande d'aide à Cédric pour trouver le bug. Toolstips toujours pas cassés sur mes exemples minimaux.
+La seule différence qui reste, trouvé par Cédric, c'est 
+
+Hello. Trying to pass a build for Pegasus reporting.
+Yesterday it failed on the 'app image' or 'execute step'. Without the storybook commands in the Dockerfile, still failed on 'app image' but anyway I saw in the log that the jenkinsfile asked for the storybook. So this morning I tried to change the jenkinsfile, based on Diego's PR's Jenkinsfile (link to the file) since this build passes. But mine blocks at the step 'build' now.
+I'm still on node 14. And it seems to be the problem. So if I remove npm id and go back to the old image and node line, I hope it will be ok.
+
+Hello. 
+
+Juste pour le suivi: je lutte avec les builds sur Jenkins pour créer l'environnement mais je profite d'avoir les tooltips en local pour regarder si FNX-3691 peut-être régler vite (pour l'instant il y a des rapports sur Rancher QA). Sinon je passerais à un autre bug ce soir de la todo column.
+
+Pour FNX-3528 rien à faire pour le moment, Cédric m'a dit qu'Elena refera une passe quand les tooltips seront de retour dans les env.
+
+### 4/10/23_Mercredi
+to rebase or not to rebase on Diego's branch for the node migration of Pegasus. Oui pour Cédric, non pour Diego (et en effet, la branche a des soucis, même sans ajout de ma part, ça ne build pas, même en local)
+Mais ça ne build pas non plus quand je rebase sur develop.
+(Edit du lendemain : ça passe sur develop en restant en node 14, en retirant tout ce qui est ref à storybook dans le dockerfile et le jenkins, par contre, éviter de changer l'image ou node et d'ajouter npm id, qui sont déjà sur Node 18 dans la PR de Diego )
+
+2h passées en fin de journée avec Saurav après un coup de colère de Thanh parce qu'il n'arrive pas à débugger sa migration FRX, problèmes de "circular dependencies" alors qu'il lui a passé un outil mais surtout parce que il n'arrive pas à se avancer sur ses sujets à force d'être intérompu tout le temps (pas que pas Saurav, hein) et que Diego a dû passer 3 jours à debugger de la façon dont Dragos et Saurav auraient dû faire sans lui.) Bref, j'ai tenu companie à Saurav et essayé de l'aider à debugger et utiliser l'outil recommandé par Thanh. Mais l'outil, Madge, n'a pas trouvé (l'a t'on utilisé correctement?).
+En trouvant les services sources des pb de circular dependencies et en faisant lazyloading au lieu de import ça semblait marcher.
+(Edit du vendredi 6: Saurav vient de me dire que ça cassait en fait d'autres choses, car on ne peut pas faire le lazy loading sur les services. Par contre le soucis était que inversify n'arrivait pas à résoudre l'import de certains service exportés dans le index.ts pour créer un alias et éviter d'avoir à importer avec le chemin complet. ça a l'air de progresser en retirant les services concernés (rgk..., default-view...) de l'index.ts et en les important où c'est necessaire avec le chemin complet.)
+
+### 5/10/23_Jeudi
+
+Env TDD et PR ok pour les charts-tooltips
+FNX-3691 pas reproductible (ou en tout cas Eugen va devoir trouver un rapport imitable pour pouvoir corriger le bug s'il est toujours là)
+NB : Pour Cédric, c'est parce que certains rapports n'ont pas la granularité nécessaire pour donner le total d'une currency par exemple quand on groupe et donc le chart se retrouve avec un arrêt de sommes au lieu du total et prend la première dans certains cas.
+Du coup, j'ai pris un nouveau ticket. Je reproduis mais je m'y mettrais demain.
+
+Partie à changer dans le exe d'Openfin target = C:\Users\u730750\AppData\Local\OpenFin\OpenFinRVM.exe --config="https://treasury-launcher.treasury-fnx-dev.fnx.devops.misys.global.ad/manifests/launcher.json"
+si on est sur develop en ligne
+si on veut son env local target = C:\Users\u730750\AppData\Local\OpenFin\OpenFinRVM.exe --config="https://://localhost:3360/manifests/launcher.json"
+
+### 6/10/23_Vendredi
+*home office, well more like bed office*
+*so tired. peut-être à nouveau une carence en fer ? ou magnésium ? ou juste sommeil ^^*
+
+Mon nouveau bug, FNX-3601, me lance dans l'exploration de la doc d'Openfin, la config pour le moment;
+Je vais essayer de découvrir un peu plus la finTech et ses outils, en tout cas Bloomsberg et Openfinance. 
+
+Error in console :
+
+ index-d6988438.js:11245 Uncaught (in promise) TypeError:
+  Cannot read properties of undefined (reading 'document')
+  at createWindow (index-d6988438.js:11245:30)
+  at async PopupManagerOpenfinService.create (index-d6988438.js:11307:22)
+  at async FnxReportManagerEditorFormHeader.initConfirmationPopover (fnx-report-manager-editor-form-header.entry.js:82:21)
+  at async FnxReportManagerEditorFormHeader.componentWillLoad (fnx-report-manager-editor-form-header.entry.js:76:32)
+
+at createwindow :
+  return win.getWebWindow().document.querySelector(elementTag);
+
+ ### Dates ...?
+
+**MGR-35147 : What do we know ?**
+
+are you doing anything strange with state?
+
+we are talking about PDC.
+
+Before upgrade of node 18 and adaptable (so alk/adaptable and alk/grid-utils too), my function/predefined congig worked flowlesly
+
+Then, Diego told me to extract it to have the utils for badges everywhere
+(I could try it in report viewer ? haven't tried that)
+
+In alk-adaptable, migration was done, so I had to use the migrated verison of PDC (finished by Cédric).
+In order to use my version of alk/adaptable to use the new utils.
+
+But in the migrated version of PDC, the styledBadges where configurated but not applied unless a manual "finish" was done in the adaptable config panel.
+
+So I made a story about that in alk/adaptable but pb of imports because of redirection.
+By the way, I uncovered a problem with outdated conditional styles not changed in the stories in alk/adaptable (now it's format column with rules)
+Changed that, have new problem of imports.
+
+So tried to put it in alk/grid-utils, same pb in PDC when we use the utils.
+
+So, tried to add as simply as possible the predefinedConfig directly in the adaptableOptions and same pb of it being configured but not applied unless user manipulation.
+
+Storybook ok now except that adaptable state doesn't clear in local storage and it doesn't apply correctly when we go from one predefinedConfig to another one.
+
+I should try to use my utils in report viewer.
+
+15h25 : After just starting launcher and report-viewer locally (after rebase on develop and npm i, just changed alk/grid-utils version for the one where my utils is, nothing more, to see if the virgin version worked):
+
+Errors that appear without doing anything in report-viewer now :
+
+alk-adaptable.entry.js:94777 Unexpected keys "PercentBar", "UpdatedRow", "GradientColumn", "ConditionalStyle" found in previous state received by the reducer. Expected to find one of the known reducer keys instead: "Grid", "Popup", "System", "Plugins", "Alert", "FlashingCell", "Application", "CalculatedColumn", "CustomSort", "Dashboard", "Export", "FormatColumn", "FreeTextColumn", "Layout", "Schedule", "StatusBar", "PlusMinus", "QuickSearch", "Shortcut", "TeamSharing", "Theme", "ToolPanel", "Query", "Charting", "StyledColumn", "Comments". Unexpected keys will be ignored.
+warning$4 @ alk-adaptable.entry.js:94777
+alk-adaptable.entry.js:113420 Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application. To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+    at https://localhost:3351/build/alk-adaptable.entry.js:140097:59
+    at QuickFilterFormComponent (https://localhost:3351/build/alk-adaptable.entry.js:223610:9)
+    at ConnectFunction (https://localhost:3351/build/alk-adaptable.entry.js:153394:28)
+    at ThemeProvider (https://localhost:3351/build/alk-adaptable.entry.js:103235:5)
+    at Provider (https://localhost:3351/build/alk-adaptable.entry.js:152723:20)
+
+### 6/11/23_Lundi
+
+Catch up de la plupart des e-mails et de la moitié des PRs au retour de 10 jours de vacances.
+
+**MGR-35147 Styled Badges :**
+
+Pas de problème restant sur le storybook de alk/adaptable, le fonction getBadges foncitonne correctement
+à part l'espace vide au dessus des tableau et l'alerte en console à propos de la version d'adaptable qui serait de test
+
+Dans alk-component, même comportement plutôt correct quand je tire la version d'alk/adaptable avec les stories sur les styled badges.
+
+Dans PDC et Report Viewer, j'ai le soucis d'application des predefined config, que je fasse un FormatColumn simple ou
+des badgesStyle. C'est configuré mais pas appliqué tant que je ne fais pas n'importe quelle action manuelle 
+pour appliquer une predefined config (exemple : si je prédéfini un column format il n'est pas là au chargement mais si je vais valider un create badge style dans une autre colonne, le format prédéfini va aller s'appliquer sur la colonne prévue par le code.)
+
+Autre constatation : les éléments de predefined config sont bien dans le console.log d'adaptable options.
+Et ça correspond à ce que j'ai dans this.gridApi > __adaptable > adaptableOptions,
+sachant que this.gridApi > __adaptable > adaptableOptions > stateOptions n'a pas l'air bizarre mais bon.
+
+
+### 6/11/23_Mardi
+
+[X] Je devrais regarder demain s'il y a quelque chose dans evt.detail old state et new state.
+Edit : indeed, il manquait l'import de l'adaptableApi + un appel à this.adaptableApi.configApi.reloadPredefinedConfig() 
+après avoir récupéré les données (les rows, en l'occurence)  
+Trouvé grâce à Diego.
+
+[ ] Est-ce que c'est embêtant qu'on ne donne pas la licence d'ag-grid dans alk/adaptable (erreur console comme quoi version test)  
+
+[ ] Comprendre pourquoi il y a ce rectangle vide dans le storybook (mais je crois que c'est les fameux 'watermark',  
+sauf qu'un pb fait qu'on ne les voit pas, non ?)  
+
+---> pour Cédric, il faut ajouter une adaptableStateKey ici pour chacune des story pour que les styles ne s'écrasent pas.  
+(Il ne sait pas pourquoi il y a le rectangle vide en haut du tableau au bout de quelques changements.)  
+
+[ ] Finir de lire les PRs
+
+[X] AI training, phase 2 fait. (Pas intéressant)
+
+Snippet pour formatColumn très basique :
+```    predefinedConfig: {
+        FormatColumn: {
+            FormatColumns: [
+                {
+                    Style: {
+                        ForeColor: 'Red',
+                    },
+                    Scope: {
+                        ColumnIds: [ 'type' ],
+                    },
+                    Rule: {
+                        Predicates: [
+                            {
+                                PredicateId: 'Is',
+                                Inputs: [ 'Simple' ],
+                            },
+                        ],
+                    },
+                },
+            ],
+        },
+```
+NB : à retenir :
+pour savoir et verifier quelle est la version de tel ou tel lib utilisée par npm (qui choisit parfois mal parmi plusieurs versions tirées par différentes lib):
+2 solutions bien utiles : aller vérifier dans le package-lock.json (et non ds le package.lock)  
+ou bien faire "npm ls nomDeMaLib" par exemple :  
+`npm ls ag-grid-community  `
+`npm ls @adaptabletool/adaptable  `
+
+DEMAIN :
+- PRs
+- montrer styledBadges à Eugen
+- prerealese alk/adaptable puis changer version dans PDC
+- ticket suivant
+
+Changer les noms de couleurs pour des variables du design system.
+Du coup, utiliser la fonction getRootCssVar définie dans al Kebir
+Puis trouver mes teintes dans le color-palette
+
+Et pour les utiliser dans typescript : 
+
+import { getRootCssVar } from '@alk/core';
+
+const varValueGetter = getRootCssVar(window);
+
+exemple :
+BackColor: varValueGetter('--alk-g-25'),
+
+Pour mémoire, je vais garder ici les codes des couleurs:
+
+export const statusStyles: Record<EStatus, AdaptableStyle> = {
+    [ EStatus.TRIAL ]: {
+        BackColor: '#D4EFDA',
+        BorderColor: '#56C271',
+    },
+    [ EStatus.BREACH ]: {
+        BackColor: '#FFEBEB',
+        BorderColor: '#F9423A',
+    },
+    [ EStatus.WARNING ]: {
+        BackColor: '#FBEBC7',
+        BorderColor: '#FFA76D',
+    },
+    [ EStatus.OPEN ]: {
+        BackColor: '#FAFAFA',
+        BorderColor: '#9F9F9F',
+    },
+};
+
+Dans report viewer, certaines options sont supprimées dans le menu contextuel à partir des adaptable options.
+(ici j'ai ajouté Edit et Create Badge style)
+import { AdaptableMenuItem, AdaptableOptions, AdaptableStyle } from '@adaptabletools/adaptable/types';
+adaptableOptions:
+    menuOptions: {
+        showAdaptableColumnMenu: (menuItem: AdaptableMenuItem) => {
+            return ![
+                'Dashboard',
+                'See Cell Summary',
+                'Edit Layout',
+                'Change Caption',
+                'Create Plus/Minus Rule',
+                'Show System Status',
+                'Create Badge Style',
+                'Edit Badge Style'
+            ].includes(menuItem.label);
+        },
+        showAdaptableContextMenu: (menuItem: AdaptableMenuItem) => {
+            return ![
+                'Dashboard',
+                'See Cell Summary',
+                'Edit Layout',
+                'Show System Status',
+            ].includes(menuItem.label);
+        },
+    },
+
+### 10/11/23_Vendredi
+
+Leçon du jour, Cédric m'a montré que la réponse à une de mes question était dans une page de doc que j'avais consulté.
+Je l'avais juste pas lue correctement. RFM reminder;
+Connaitre l'objectif, qu'il soit clairement défini. Lire la doc pour savoir si l'outil peut le faire et comment.
+Et ce avant d'essayer d'implémenter quoi que ce soit. Sinon on perd du temps. Pourtant je le sais, Thanh le répète assez. Même moi je le répète à la maison.
+Mais je fait encore l'erreur visiblement.
+ça n'est pas un échec, c'est une leçon. Et bim ! comme dirait Cédric.
+
+    - ticket MGR :
+	- trouver comment protéger les badges des actions de l'utilisateur:
+		FormatColumn et StyledColumn retiré du menu contextuel
+		Reste à regler: 
+			erreur dans les tests suite à la modif
+			trouver comment éviter les modifs depuis le setting panel
+			( message envoyé à adaptable à ce sujet)
+
+	- améliorer le rendu des stories (adaptable state keys ?)
+- ticket tooltips :
+	- trouver où c'est dans le code
+	- trouver comment faire
+	A priori : dans peg-common-header, rajouter un tooltip renderer ?
+	Branche locale créée en tout cas.
+
+- devops :
+demander à Diego pour réparer le server Node.js de conversion http vers http2
+pour aider Rémi avec son docker-compose pour somit qui ne marche plus depuis 3 semaines
+
+- faire le training Github
+
+- voir la formation fonctionnelle par Eugen
+
+- finir un cours pluralSight
+
+- finir un cours linkedin
